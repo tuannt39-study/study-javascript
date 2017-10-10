@@ -1,0 +1,81 @@
+
+- Cú pháp của JavaScript
+
+- JavaScript có thể được thực hiện bởi sử dụng các lệnh JavaScript mà được đặt trong thể HTML <script> ... </script> trong một trang web.
+Bạn có thể đặt các thẻ <script> chứa JavaScript của bạn bất cứ đâu trong trang của bạn nhưng được đề nghị là bạn nên giữ nó trong các thẻ <head>.
+Thẻ <script> báo cho chương trình trình duyệt bắt đầu phiên dịch tất cả văn bản ở giữa các thể này như là một script. Một cú pháp đơn gian của JavaScript sẽ cuất hiện như sau:
+<script ...>
+    JavaScript code
+</script>
+
+- Thẻ script nhận 2 thuộc tính quan trọng sau:
++ Language: Thuộc tính này xác định ngôn ngữ scripting nào bạn đang sử dụng. Giá trị của nó sẽ là javascript. Mặc dù các phiên bản gần đây của HTML và XHTML đã thôi dần không dùng thuộc tính này nữa.
++ Type: Thuộc tính này là những gì bây giờ được đề nghị sử dụng và giá trị của nó nên được thiết lập là "text/javascript".
+
+- Dưới đây là một đoạn JavaScript:
+<script language="javascript" type="text/javascript">
+    JavaScript code
+</script>
+
+- JavaScript đầu tiên:
++ Bây giờ chúng ta làm một ví dụ mẫu để in "Hello World". Chúng ta thêm một HTML comment (lời bình) tùy ý mà bao quanh JavaScript code.
+Điều này bảo lưu code của chúng ta khi một trình duyệt không hỗ trọ JavaScript. Comment kết thúc với một "//-->".
+Tại đây "//" biểu thị 1 comment trong JavaScript, vì thế chúng ta thêm nó để ngăn một trình duyệt đọc comment như là một phần của JavaScript code.
+Tiếp theo chúng ta gọi một hàm document.writer mà viết một chuỗi trong tài liệu HTML của chúng ta.
++ Hàm này có thể được sử dụng để viết văn bản HTML hoăc cả hai:
+<html>
+    <body>
+        <h2>Hello</h2>
+        <script language="javascript" type="text/javascript">
+            <!--
+            document.write("Hello World!")
+            //-->
+        </script>
+    </body>
+</html>
+
+- Khoảng trắng và dòng ngắt:
+JavaScript bỏ qua khoảng trống, tab và dòng mới xuất hiện trong các chương trình JavaScript.
+Bạn có thể sử dụng khoảng trống, tab và dòng mới tự do trong chương trình của bạn và bạn tự do định dạng và thụt đoạn chương trình của bạn và cách tích hợp để tạo code dễ dàng để đọc và hiểu.
+
+- Dấu chấm phẩy tùy ý:
+Các lệnh đơn giản trong JavaScript nói chung được theo sau bởi một ký tự dấu chấm phẩy, mà khi chúng có trong C, C++ và Java.
+Tuy nhiên JavaScript cho phép bạn bỏ quên dấu chấm phẩy này nếu mỗi lệnh của bạn được đặt trên một dòng riêng rẽ.
+
+Không cần dấy chấm phẩy:
+<script language="javascript" type="text/javascript">
+    var1 = 10
+    var2 = 20
+</script>
+
+Cần dấu chấm phẩy:
+<script language="javascript" type="text/javascript">
+    var1 = 10; var2 = 20;
+</script>
+
+Ghi chú: Nên sử dụng các dấu chấm phẩy.
+
+- Phân biệt kiểu chữ:
+JavaScript là ngôn ngữ phân biệt kiểu chữ (case-sensitive). Nghĩa là các từ khóa ngôn ngữ, biến, tên hàm và bất kỳ định danh nào khác phải luôn được soạn đúng.
+Do đó TIME và Time sẽ có các ý nghĩa khác nhau trong JavaScript.
+Ghi chú: Bạn nên đặc biệt cẩn thận khi viết các biến và tên hàm trong JavaScript.
+
+- Comment trong JavaScript:
+JavaScript hỗ trợ cả hai style lời bình của C và C++ vì vậy:
++ Bất kỳ văn bản nào ở giữa một // và phần kết thúc của một dòng được đối xử như là một comment và bị bỏ qua bởi JavaScript.
++ Bất kỳ văn bản ở giữa các ký tự /* và */ được xem như là một comment. Nó có thể trả rộng qua nhiều dòng.
++ JavaScript cũng nhận ra HTML comment với dãy mở <!--. JavaScript xem nó như là lời bình dòng đơn, giống như lời bình //.
++ Dãy đóng --> trong HTML comment không được nhận ra bởi JavaScript vì thế nó nên được viết như là //-->.
+
+Ví dụ:
+Cách sử dụng các comment trong JavaScript:
+<script language="javascript" type="text/javascript">
+    <!--
+        Hello
+        // Chú thích
+        /*
+        * chú thích
+        * chú thich
+        */
+    //-->
+</script>

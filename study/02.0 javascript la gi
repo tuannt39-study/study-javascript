@@ -1,0 +1,45 @@
+
+- JavaScript là gì?
+
+- JavaScript là một ngôn ngữ lập trình của HTML và WEB. Nó là nhẹ và được sử dụng phổ biến nhất như là một phần của các trang web, mà sự thì hành của chúng cho phép Client-Side script tương tác với người sử dụng và tạo các trang web động. Nó là ngôn ngữ chương trình thông dịch với các khả năng hướng đối tượng.
+
+- JavaScript được biết đến đầu tiên với tên Mocha và sau đó là LiveScript nhưng hãng Netscape thay đổi tên của nó thành JavaScript bởi vì sự phổ biến như là một hiện tượng của java lúc bấy giờ.
+JavaScript xuất hiện lần đầu trong Netscape 2.0 năm 1995 với tên LiveScript. Core đa năng của ngôn ngữ này đã được nhúng vào NetScape, IE và các trình duyệt khác.
+
+- ECMA-262 Specification định nghĩa một phiên bản chuẩn của ngôn ngữ JavaScript như sau:
++ JavaScript là một ngôn ngữ chương trình thông dịch, nhẹ.
++ Được thiết kế để tạo các ứng dụng mạng trung tâm.
++ Bổ sung và tích hợp với Java.
++ Bổ sung và tích hợp với HTML.
++ Mở và đa nền tảng.
+
+- Client-Side JavaScript:
++ Client-Side JavaScript là form phổ biến nhất của ngôn ngữ này. Script nên được bao gồm trong một tài liệu HTML cho việc mã hóa để được thông dịch bởi trình duyệt.
++ Nghĩa là một trang web không cần là một HTML tĩnh, nhưng có thể bao gồm các chương trình tương tác với người dùng, điều khiển trình duyệt và tạo nội dung HTML động.
++ Kĩ thuật Client-Side JavaScript cung cấp nhiều lợi thế hơn các CGI Server-Side Script. Ví dụ bạn có thể sử dụng JavaScript để kiểm tra nếu người sử dụng đã nhập một địa chỉ Email hợp lệ trong một trường form.
++ JavaScript code được thực thi khi người sử dụng đệ trình form và chỉ nếu tất cả đầu vào là hợp lệ chúng sẻ được đệ trình tới Web Server.
++ JavaScript có thể được sử dụng để nắm bắt các sự kiện được khởi tạo từ người sử dụng như nhấp chuột, điều hướng link và các hoạt động khác mà người dùng khởi tạo.
+
+- Các lợi thế của JavaScript:
++ Sự tương tác Server ít hơn: Bạn có thể xác nhận đầu vào (Input) người sử dụng trước khi gửi trang tới Server. Điều này làm tiết kiệm lưu lượng tải ở Server, nghĩa là Server của bạn tải ít hơn.
++ Phản hồi ngày lập tức tới khách truy cập: Họ không phải chờ cho một trang web tải lại để thấy xem nếu họ đã quên nhập cái gì đó.
++ Khả năng tương tác tăng lên: Bạn có thể tạo các giao diện mà phản ứng lại khi người sử dụng rê chuột qua chúng hoặc kích hoạt chúng thông qua bàn phím.
++ Giao diện phong phú hơn: Bạn có thể sử dụng JavaScript để bao gồm những mục như các thành phần Drag và Drop (DnD) và các con trượt (Slider) để cung cấp một Rich Interface (Giao diện giàu tính năng) tới site khách truy cập của bạn.
+
+- Hạn chế của JavaScript:
+Chúng ta không thể đối xử JavaScript như là một ngôn ngữ chương trình chính thức (full-fledged). Nó thiếu các tính năng quan trọng sau:
++ Client-Side JavaScript không cho phép đọc và ghi các file bởi vì lý do bảo mật.
++ JavaScript không được sử dụng cho việc kết nối mạng các ứng dụng vởi vì không có những hỗ trọ có sẵn.
++ JavaScript không có bất kỳ khả năng đa luồng hoặc đa xử lý.
+Một lần nữa JavaScript là một ngôn ngữ chương trình thông dịch, nhẹ mà cho phép bạn xây dựng khả năng tương tác trong các trang HTML tĩnh.
+
+- Các công cụ phát triển JavaScript:
+Một trong những điểm mạnh lớn nhất của JavaScript là nó không yêu cầu các công cụ phát triển tốn kém.
+Bạn có thể bắt đầu với bộ biên soạn (Editor) văn bản như Notepad. Khi nó là một ngôn ngữ thông dịch bên trong context của một trình duyệt web, bạn không cần phải mua một Compiler (Bộ phiên dịch).
+Để làm cuộc sống bạn đơn giản hơn, nhiều nhà cung cấp đã cho ra đời các cộng cự chỉnh sửa JavaScript đẹp như:
++ Microsoft FrontPage: Microsoft đã phát triển một HTML Editor phổ biến được gọi là FrontPage. FrontPage cũng cung cấp cho các nhà lập trình các công cụ JavaScript để giúp đỡ tạo các Website có tính tương tác.
++ Macromedia Dreamweaver MX: là một HTML và JavaScript Editor rất phổ biến trong cộng đồng lập trình web chuyên nghiệp. Nó cung cấp các thành phần JavaScript đã xây dựng trước mà thuận tiện, tích hợp tốt với cơ sở dữ liệu và theo các chuẩn mới như XHTML, XML.
++ Macromedia HomeSite 5: là một HTML và JavaScript Editor từ Macromedia mà có thể được sử dụng để quản lý các Website cá nhân một cách hiệu quả.
+
+- JavaScript ngày nay:
+Chuẩn ECMAScript Edititon 8 - 2017

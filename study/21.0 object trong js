@@ -1,0 +1,173 @@
+
+- Đối tượng trong JavaScript
+
+- JavaScript là một ngôn ngữ chương trình hướng đối tượng (Object Oriented Programming).
+Một ngôn ngữ chương trình có thể được gọi là hướng đối tượng nếu nó cung cấp 4 khả năng cơ bản tới nhà lập trình;
++ Encapsulation - Khả năng lưu trữ thông tin liên quan, là dữ liệu hoặc các phương thức, cùng với nhau trong một đối tượng.
++ Aggregation - Khả năng lưu trữ một đối tượng bên trong một đối tượng khác.
++ Inheritance - Khả năng của một lớp dựa trên lớp khác (hoặc một số lớp) đối với một số thuộc tính và phương thức của nó.
++ Polymorphism - Khả năng để viết một hàm hoặc phương thức mà làm việc trong nhiều cách đa dạng khác nhau.
+
+Các đối tượng bao gồm các thuộc tính. Nếu một thuộc tính chứa một hàm, nó được cho là một phương thức của đối tượng, nếu không thì thuộc tính được xem là một thuộc tính.
+
+- Các thuộc tính của đối tượng
+Các thuộc tính của đối tượng có thể là bất kỳ loại nào trong 3 kiểu dữ liệu gốc (primitive), hoặc trong các kiểu dữ liệu trừu tượng (abstract), ví dụ như đối tượng khác.
+Các thuộc tính đối tượng thường là các biến mà được sử dụng bên trang các phương thức của đối tương, nhưng cũng có thể là các biến global có thể nhìn thấy mà được sừ dụng xuyên suốt trang web.
+
+Cú pháp để thêm một thuộc tính tới một đối tượng là:
+objectName.objectProperty = propertyValue;
+
+Ví dụ:
+Code sau nhận title tài liệu bởi sử dụng thuộc tính "title" của đối tượng document:
+var str = document.title;
+
+- Phương thức đối tượng
+Các thức là các hàm mà chỉ dẫn đối tượng thực hiện việc gì đó hoặc chỉ dẫn việc gì đó được thực hiện tới nó.
+Có một sự khác nhau nhỏ giữa một hàm và một phương thức. Ở một hàm là một đơn bị đứng độc lập của các tập lệnh và phương thức được đính kèm tới một đối tượng và có thể tham chiếu bởi từ khóa this.
+
+Các phương thức là hữu dụng cho mọi thứ từ hiển thị nội dung của đối tượng trên màn hình tới thực hiện các phép toán phức tạp trên một nhóm các thuộc tính và tham số nội bộ.
++ Ví dụ:
+Cách sử dụng phương thức write() của đối tượng document để viết bất kỳ nội dung nào trên tài liệu.
+document.write("This is test");
+
+- Các đối tượng người dùng tự định nghĩa
+Tất cả đối tượng người dùng tự định nghĩa (User-defined Objects) và đối tượng có sẵn là đối tượng con của một đối tượng được gọi là Object.
+
++ Toán tử new:
+Toán tử new được sử dụng để tạo một đối tượng.
+Để tạo một đối tượng, toán tử new được theo sau bởi phương thức constructor.
+
+Trong ví dụ sau, các phương thức constructor là Object(), Array(), và Date(). Những constructor này là các hàm số có sẵn trong JavaScript.
+var employee = new Object();
+var book = new Array("C++", "Prel", "Java");
+var day = new Date("August 15, 1991");
+
++ Object() Constructor
+Một constructor là một hàm mà tạo và khởi tạo một đối tượng. JavaScript cũng cấp một hàm constructor đặc biệt là Object() để xây dựng một đối tượng.
+Giá trị trả về của Object() constructor được gán tới một biến.
+Biến này chứa một tham chiếu tới đối tượng mới. Các thuộc tính dược gán tới đối tượng khoongn là các biến và không được định nghĩa với từ khóa var.
+
++ Ví dụ 1:
+Mình họa cách tạo một Object:
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <script type="text/javascript">
+            var book = new Object();
+            book.subject = "Java";
+            book.author = "Nguyen Tuan";
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            document.write("Book name is : " + book.subject + "<br />");
+            document.write("Book author is : " + book.author + "<br />");
+        </script>
+    </body>
+</html>
+
++ Ví dụ 2:
+Minh họa cách tạo một đối tượng với một User-Defined Function (hàm người dùng tự định nghĩa).
+Ở đây, từ khóa this được sử dụng để tham chiếu tới đối tượng mà đã được truyền tới một hàm.
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User-Defined Function</title>
+        <script type="text/javascript">
+            function book(title, author) {
+                this.title = title;
+                this.author = author;
+            }
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var myBook = new book("Java", "Nguyen Tuan");
+            document.write("Book title is : " + myBook.title + "<br />");
+            document.write("Book author is : " + myBook.author + "<br />");
+        </script>
+    </body>
+</html>
+
+- Định nghĩa phương thức cho một đối tượng
+Ví dụ trước mình họa cách constructor tạo đối tượng và gán các thuộc tính.
+Nhưng chúng ta cần hoàn thành việc định nghĩa một đối tượng bằng việc gán các phương thức cho nó.
+
++ Ví dụ:
+Nó chỉ cách thêm một hàm cùng với một đối tượng.
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function addPrice(amount) {
+                this.price = amount;
+            }
+            function book (title, author) {
+                this.title = title;
+                this.author = author;
+                this.addPrice = addPrice;
+            }
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var myBook = new book("Java", "Nguyen Tuan");
+            myBook.addPrice(10000);
+            document.write("Book title is : " + myBook.title + "<br />");
+            document.write("Book author is : " + myBook.author + "<br />");
+            document.write("Book price is : " + myBook.price + "<br />");
+        </script>
+    </body>
+</html>
+
+- Từ khóa 'with'
+Từ khóa 'with' được sử dụng như là một loại tốc ký (shorthand) để tham chiếu các thuộc tính hoặc phương thức của đối tượng.
+
+Đối tượng được xác định như là một tham số tới with trở thành đối tượng mặc định cho quãng thời gian (duration) của khối mà theo sau.
+Các thuộc tính và phương thức cho đối tượng có thể được sử dụng mà không cần đặt tên đối tượng đó.
+
++ Cú pháp:
+with (object){
+   properties used without the object name and dot
+}
+
++ Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function addPrice(amount) {
+                with(this) {
+                    price = amount;
+                }
+            }
+
+            function book(title, author) {
+                this.title = title;
+                this.author = author;
+                this.price = 0;
+                this.addPrice = addPrice;
+            }
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var myBook = new book("Java", "Nguyen Tuan");
+            myBook.addPrice(500000);
+            document.write("Book title is : " + myBook.title + "<br />");
+            document.write("Book author is : " + myBook.author + "<br />");
+            document.write("Book price is : " + myBook.price + "<br />");
+        </script>
+    </body>
+</html>
+
+- Các đối tượng JavaScript có sẵn
+JavaScript có một số đối tượng có sẵn (built-in hoặc native object).
+Những đối tượng này là có thể truy cập từ bất cứ đâu trong chương trình của bạn và sẽ làm việc theo cách tương tự với bất kỳ đối tượng nào đang chạy trên bất kỳ hệ điều hành nào.
+Đối tượng Number
+Đối tượng Boolean
+Đối tượng String
+Đối tượng Array
+Đối tượng Date
+Đối tượng Math
+Đối tượng RegExp

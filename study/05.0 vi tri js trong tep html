@@ -1,0 +1,75 @@
+
+- Vị trí JavaScript trong tệp HTML
+
+- Có một sự linh động trong việc cung cấp JavaScript code bất cứ đâu trong một tài liệu HTML.
+Tuy nhiên các cách ưu tiên nhất để bao gồm JavaScript trong một tệp HTML là:
++ Script trong khu vực <head> ... </head>
++ Script trong khu vực <body> ... </body>
++ Script trong khu vực <head> ... </head> và <body> ... </body>
++ Script trong tệp ngoại vi sau đó bao gồm trong khu vực <head> ... </head>
+
+- JavaScript trong khu vực <head> ... </head>
+Nếu bạn muốn có một script chạy trên một số sự kiện như khi người sử dụng nhấp chuột vào nơi nào đó thì khi đó bạn sẽ đặt script đó trong <head> như sau:
+<html>
+    <head>
+        <script language="javascript" type="text/javascript">
+            function sayHello() {
+                alert("Xin chào");
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" onclick="sayHello()" value="Hello" />
+    </body>
+</html>
+
+- JavaScript trong khu vực <body> ... </body>:
+Nếu bạn cần một script để chạy khi trang tải để mà script này tạo nội dung trong trang thì khi đó script nên là một phần <body> của tài liệu.
+Trong trường hợp này bạn sẽ không có bất kỳ hàm nào được định nghĩa bởi sử dụng JavaScript.
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            document.write("Hello);
+        </script>
+
+        <p> Xin chào </p>
+    </body>
+</html>
+
+- JavaScript trong khu vực <body> và <head>:
+Bạn có thể đặt JavaScript code trong khu vực <head> và <body> như sau:
+<html>
+    <head>
+        <script language="javascript" type="text/javascript">
+            function sayHello() {
+                alert("Xin chào");
+            }
+        </script>
+    </head>
+    <body>
+        <script language="javascript" type="text/javascript">
+            document.write("Hello");
+        </script>
+        <br />
+        <input type="button" onclick="sayHello()" value="Hello" />
+        <p> Hello 1 </p>
+    </body>
+</html>
+
+- JavaScript trong tệp ngoại vi:
+Khi bạn bắt đầu làm việc rộng rãi hơn với JavaScript, bạn sẽ tìm thấy rằng có các trường hợp bạn đang sử dụng lại JavaScript code đồng nhất trên nhiều trang của một site.
+Bạn không bị giới hạn để duy trì code đồng nhất trong nhiều tệp HTML.
+Thẻ script cung cấp một kỹ thuật cho phép bạn lưu JavaScript trong một tệp ngoại vi và sau đó bao gồm nó trong các tệp HTML của bạn.
+Dưới đây là một ví dụ để chỉ cách bạn có thể bao gồm một tệp JavaScript ngoại vi trong HTML code bởi sử dụng thẻ script và thuộc tính src của nó.
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <script language="javascript" type="text/javascript" src="js/demo.js"> </script>
+    </head>
+    <body>
+        <p> Hello </p>
+        <input type="button" onclick="sayHello()" value="Hello" />
+    </body>
+</html>

@@ -1,0 +1,105 @@
+
+- Hàm trong JavaScript
+
+- Một hàm là một nhóm code có thể tái sử dụng mà có thể được gọi bất cứ đâu trong chương trình của bạn.
+Điều này giúp bạn không cần thiết phải viết cùng một code lại nhiều lần. Nó giúp các nhà lập trình viết các modular code.
+Các hàm cho phép một nhà lập trình phân chia một chương trình lớn thành các hàm nhỏ và dễ quản lý.
+Giống như bất kỳ ngôn ngữ chương trình cấp cao khác, JavaScript cũng hỗ trợ tất cả tính năng cần thiết để viết các code có tính modun bởi sử dụng các hàm.
+Bạn đã xem các hàm như alert() và write() trong các chương trước. Chúng tôi đã sử dụng các hàm này nhiều lần, nhưng chúng mới chỉ được viết trong core JavaScript.
+JavaScript cũng cho phép chúng ta viết các hàm riêng cho mình. Phần này giải thích cách viết hàm riêng của bạn trong JavaScript.
+
+- Định nghĩa hàm:
+Trước khi chúng ta sử dụng một hàm, chúng ta cần định nghĩa nó.
+Phương thức phổ biến nhất để định nghĩa một hàm trong JavaScript là bởi sử dụng từ khóa function(), được theo bởi một tên hàm duy nhất, một danh sách các tham số (mà có thể trống) và một khối lệnh được bao quanh bở các dấu ngoặc ôm '}'.
+
+- Cú pháp:
+<script type="text/javascript">
+      function functionname(parameter-list) {
+         statements;
+      }
+</script>
+
+- Ví dụ:
+Định nghĩa một hàm là sayHello mà không nhận tham số nào:
+<script type="text/javascript">
+    function sayHello() {
+        alert("Xin chào");
+    }
+</script>
+
+- Gọi một hàm:
+Để gọi một hàm ở đâu đó sau khi trong script, bạn đơn giản sẽ cần viết tên của hàm đó như code sau:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function sayHello() {
+                document.write("Xin chào");
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <p>Mọi người vui vẻ</p>
+            <input type="button" onclick="sayHello()" value="Hello" />
+            <p>Mọi người vui vẻ</p>
+        </form>
+    </body>
+</html>
+
+- Tham số của hàm:
++ Tới chương này, chúng ta đã tháy các hàm mà không có tham số. Nhưng có một sự tiện lợi khi truyền các tham số khác nhau trong khi gọi một hàm.
+Những tham số được truyền này có thể được nắm bắt bên trong hàm đó, và bất kỳ thao tác nào có thể được thực hiện trên các tham số đó.
+Một hàm có thể nhận nhiều tham số được phân biệt riêng rẽ bởi dấu chấm phẩy ';'.
+
++ Sử dụng tham số của hàm trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function sayHello(name, age) {
+                document.write(name + " is " + age + " years old.");
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <p>Mọi người vui vẻ</p>
+            <input type="button" onclick="sayHello('Tuân', 11)" value="Hello" />
+            <p>Mọi người vui vẻ</p>
+        </form>
+    </body>
+</html>
+
+- Lệnh return:
+Một hàm JavaScript có thể có một lệnh return tùy ý. Lệnh này được yêu cầu nếu bạn muốn trả về một giá trị từ một hàm.
+Lệnh này nên là lệnh cuối của một hàm.
+Ví dụ bạn có thể truyền hai số trong một hàm và sau đó bạn có thể mong đợi hàm đó trả về kết quả phép nhân 2 số đo trong chương trình gọi hàm của bạn.
+
++ Ví dụ:
+Sử dụng lệnh return trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function concatenate(first, last) {
+                var full;
+                full = first + last;
+                return full;
+            }
+
+            function secondFunction() {
+                var result;
+                result = concatenate('Tuan', 'Khong');
+                document.write(result);
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <p>Mọi người vui vẻ</p>
+            <input type="button" onclick="secondFunction()" value="Hello" />
+            <p>Mọi người vui vẻ</p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+
+- Vòng lặp for in trong JavaScript
+
+-Vòng lặp for .. in được sử dụng để lặp qua các thuộc tính của một đối tượng.
+Khi chúng ta vẫn chưa bàn luận về đối tượng, bạn có thể cảm thấy thoải mái với vòng lặp này.
+Nhưng một khi bạn hiểu cách các đối tượng vận hành trong JavaScript, bạn sẽ thấy vòng lặp này rất hữu ích.
+
+- Cú pháp:
+for (variablename in object){
+   statement or block to execute
+}
++ Trong mỗi lần lặp, một thuộc tính từ object - đối tượng được gán tới variablename - tên biến và vòng lặp này tiếp tục tới khi hết tất cả thuộc tính của đối tượng.
+
+- Sử dụng vòng lặp for .. in trong JavaScript: Nó in đối tượng Navigator của trình duyệt web.
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var aProperty;
+            document.write("Navigator Object Properties <br />");
+
+            for (aProperty in navigator) {
+                document.write(aProperty);
+                document.write("<br />");
+            }
+
+            document.write("Exiting from the loop!");
+        </script>
+    </body>
+</html>
+
+

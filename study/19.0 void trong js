@@ -1,0 +1,64 @@
+
+- Từ khóa Void trong JavaScript
+
+- void là một từ khóa quan trọng trong JavaScript mà có thể được sử dụng như là một toán tử một ngôi xuất hiện trước toán hạng đơn của nó, mà có thể trong bất kỳ kiểu nào.
+Toán tử này xác định một biểu thức để được ước lượng mà không trả về một giá trị.
+
+- Cú pháp:
+<script type="text/javascript>
+    void func()
+    javascript:void func()
+    or:
+    void (func())
+    javascript:void(func())
+</script>
+
+- Ví dụ 1:
+Sử dụng phổ biến nhất là toán tử này là trong một Client-Side javascript:URL, nó cho phép bạn ước lượng một biểu thức cho các tác động thứ yếu của nó (side-efects) mà trình duyệt không hiển thị giá trị của biểu thức đã ước lượng.
+Ở đây biểu thức alert('Warning!!!') được ước lượng nhưng nó không được tải trả lại trong tài liệu hiện tại.
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p>Click the following, This won't react at all...</p>
+        <a href="javascript:void(alert('Warning!!!'))">Click me!</a>
+   </body>
+</html>
+
+- Ví dụ 2:
+Link sau sẽ không là gì bởi vì biểu thức "0" không có tác động trong JavaScript. Ở đây biểu thức "0" được ước lượng, nhưng nó không được tải trở lại trong tài liệu hiện tại.
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p>Click the following, This won't react at all...</p>
+        <a href="javascript:void(0))">Click me!</a>
+   </body>
+</html>
+
+- Ví dụ 3:
+Cách sử dụng khác của void là chủ yếu để tạo giá trị undefined như sau:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function getValue() {
+                var a, b, c;
+                a = void (b=5, c=7);
+                document.write("a = " + a + " | b = " + b + " | c = " + c);
+            }
+        </script>
+    </head>
+    <body>
+        <p>Click the following to see the result:</p>
+        <form>
+         <input type="button" value="Click Me" onclick="getValue();" />
+        </form>
+    </body>
+</html>

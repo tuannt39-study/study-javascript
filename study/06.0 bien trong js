@@ -1,0 +1,69 @@
+
+- Biến trong JavaScript
+
+- Kiểu dữ liệu của JavaScript
+Một trong những nét đặc thù chủ yếu nhất của một ngôn ngữ chương trình là tập hợp các kiểu dữ liệu nó hỗ trọ.
+Đây là kiểu các giá trị mà có thể được biểu diễn và được thao tác trong ngôn ngữ chương trình.
+JavaScript cho bạn làm việc với 3 kiểu dữ liệu gốc sau:
+Số: 123, 120, 50,...
+Chuỗi văn bản: "Đây là chữ",...
+Boolean: true, false
+
+JavaScript cũng định nghĩa hai kiểu dữ liệu thông thường, null và undefined, mỗi kiểu này chỉ định nghĩa một giá trị đơn.
+Bổ sung cho những dữ liệu này, JavaScript hỗ trợ một kiểu dữ liệu hỗ hợp được gọi là object(đối tượng).
+
+Ghi chú: JavaScript không phân biệt giá trị Integer và giá trị dâu chấm động (floating-point). Tất cả các số trong JavaScript được biểu diễn như là giá trị dấu chấm động.
+JavaScript biểu diễn các số sử dụng định dạng dấu chấm động 64bit, được định nghĩa bởi chuẩn IEEE754.
+
+- Các biến trong JavaScript:
+Giống như nhiều ngôn ngữ chương trình khác, JavaScript có các biến. Biến có thể được xem là một nơi chứa (container) được đặt tên.
+Bạn có thể đặt dữ liệu vào trong nơi chứa này và sau đó tham chiếu đến dữ liệu này một cách đơn giản là đặt tên cho nơi chứa.
+
+Trước khi bạn sử dụng một biến trong chương trình JavaScript, bạn phải khai báo nó. Biến được khai báo với từ khóa var như sau:
+<script type="text/javascript">
+    var money;
+    var name;
+</script>
+
+Bạn cũng có thể khai báo nhiều biến với cùng từ khóa var như sau:
+<script type="text/javascript">
+    var money, name;
+</script>
+
+Lưu giữ một giá trị trong một biến được gọi là khởi tạo biến. Bạn có thể khởi tạo biến tại thời điểm sau khi bạn cần biến đó.
+Ví dụ bạn có thể tạo một biến money và gán giá trị 2000.50 cho nó sau đó. Với biến khác bạn có thể gán một giá trị tại thời điểm khởi tạo như sau:
+<script type="text/javascrpit">
+    var name = "Tuân";
+    var money;
+    var money = 2000.50;
+</script>
+
+Ghi chú: Chỉ sử dụng var cho khai báo hoặc khởi tạo biến, một lần cho bất kỳ tên biến nào trong tài liệu. Bạn không nên khai báo lại cùng một biến hai lần.
+
+JavaScript là ngôn ngữ untyped (không định kiểu). Nghĩa là một biến JavaScript có thể giữ một giá trị của bất kỳ kiểu dữ liệu nào. Không giống nhiều ngôn ngữ khác, bạn không phải nó cho JavaScript trong suốt quá trình khai báo biến về kiểu giá trị mà biến đó giữ.
+Kiểu giá trị của biến có thể thay đổi trong suốt quá trình thực thi một chương trình và JavaScript chăm sóc nó một cách tự động.
+
+- Phạm vi biến trong JavaScript:
+Phạm vi của một biến là vùng chương trình trong đó nó được định nghĩa. Biến JavaScript chỉ có hai phạm vi sau:
+Biến Global: Một biến Global có phạm vi chung, có nghĩa là nó có thể được định nghĩa ở bất cứ đâu trong JavaScript code.
+Biến Local: Một biến Local sẽ chỉ nhìn thấy trong một hàm, nơi nó được định nghĩa. Cacs tham số hàm luôn luôn là nội bộ cho hàm đó.
+
+Thân của một hàm, một biến Local có quyền ưu tiên cao hơn biến Global với cùng một tên.
+Nếu bạn khai báo một biến Local hoặc tham số hàm cùng tên với biến Global, bạn ẩn biến Global đó một cách hiệu qua. Ví dụ sau:
+<script type="text/javascript">
+    var myVar = "global";
+    function checkscope() {
+        var myVar = "local";
+        document.write(myVar);
+    }
+</script>
+
+- Tên biến trong JavaScript:
+Bạn không nên sử dụng bất kỳ từ khóa dành riêng nào cho một tên biến.
+Tên biến JavaScript không nên bắt đầu với các số 0-9. Chúng phải bắt đầu với một chữ cái hoặc ký tự dấu gạch dưới.
+Tên biến JavaScript là phân biệt kiểu chữ.
+
+- Từ khóa danh riêng trong JavaScript:
+Bảng dưới liệt kê danh sách các từ khóa danh riêng trong JavaScript. Chúng không thể được sử dụng như là các biến, hàm, phương thức, nhãn vòng lặp, hoặc bất kỳ đối tượng nào khác trong JavaScript.
+abstract, boolean, break, byte, case, catch, char, class, const, continue, debugger, default, delete, do, double, else, enum, export, extends, false, final, finally, float, for, function, goto, if, implements, import, in.
+instanceof, int, interface, long, native, new, null, package, private, protected, public, return, short, static, super, switch, synchronized, this, throw, throws, transient, true, try, typeof, var, void, volatile, while, with.

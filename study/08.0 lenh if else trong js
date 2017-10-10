@@ -1,0 +1,102 @@
+
+- Lệnh if .. else trong JavaScript
+
+- Trong khi viết một chương trình, có thể có một tình huống khi bạn cần theo một trong một tập hợp các lựa chọn cho trước. Trong trường hợp này bạn cần sử dụng lệnh điều kiện mà cho phép chương trình của bạn điều khiển luồng chính xác và thực hiện các hành động đúng.
+JavaScript hỗ trợ các lệnh điều kiện được sử dụng để thực hiện các hành động khác nhau trên cơ sở các điều kiện khác nhau.
+
+- Sơ đồ thực hiện lệnh if else:
+JavaScript hỗ trợ các form lệnh if else sau:
+Lệnh if
+Lệnh if .. else
+Lệnh if .. else if ..
+
+- Lệnh if:
+là một lệnh điều khiển cơ bản mà cho phép JavaScript điều khiển luồng và thực thi các lệnh theo điều kiện.
++ Cú pháp:
+if (expression){
+   Statement(s) to be executed if expression is true
+}
+
++ Ở đây một biểu thức JavaScript được ước lượng. Nếu giá trị kết quả là true, lệnh đã cung cập được thực thi. Nếu biểu thức là false thì không có lệnh nào được thực thi. Hầu hết mọi lần, bạn sẽ sử dụng các toán tử so sánh trong khi điều khiển luồng.
++ Sử dụng lệnh if trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var a = 20; linebreak = "<br />";
+
+            document.write("a = " + a);
+            document.write(linebreak);
+
+            if (a > 18) {
+                document.write("Dat tieu chuan lai xe");
+            }
+        </script>
+    </body>
+</html>
+
+- Lệnh if else:
+là một mẫu lệnh điều khiển khác cho phép JavaScript thực hiện các lệnh trong một cách được điều khiển hơn.
++ Cú pháp:
+if (expression){
+   Statement(s) to be executed if expression is true
+} else{
+   Statement(s) to be executed if expression is false
+}
+
++ Ở đây một biểu thức được ước lượng. Nếu giá trị kết quả là true, lệnh đã cung cấp trong khối if được thực thi. Nếu là false thì khi đó lệnh trong khối else được thực thi.
++ Sử dụng lệnh if else trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var a = 15; linebreak = "<br />";
+
+            document.write("a = " + a);
+            document.write(linebreak);
+
+            if (a > 18) {
+                document.write("Dat tieu chuan lai xe");
+            } else {
+                document.write("Khong dat tieu chuan lai xe");
+            }
+        </script>
+    </body>
+</html>
+
+- Lệnh if else if:
+là một mẫu lệnh điều khiển if else nâng cao mà cho phép JavaScript tạo một quyết định chính xác trong một số điều kiện.
++ Cú pháp:
+if (expression 1){
+   Statement(s) to be executed if expression 1 is true
+} else if (expression 2){
+   Statement(s) to be executed if expression 2 is true
+} else if (expression 3){
+   Statement(s) to be executed if expression 3 is true
+} else {
+   Statement(s) to be executed if no expression is true
+}
+
++ Nó là một loạt các lệnh if, mỗi if là một phần của mệnh đề else của lệnh trước. Các lệnh được thực thi trên cơ sở điều kiện true, nếu không có điều kiện true thì khi đó khối else được thực thi.
++ Sử dụng lệnh if else if trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var book = "maths"; linebreak = "<br />";
+
+            document.write("book = " + book);
+            document.write(linebreak);
+
+            if (book == "history") {
+                document.write("<b>History Book</b>");
+            } else if (book == "maths") {
+                document.write("<b>Maths Book</b>");
+            } else if (book == "economics") {
+                document.write("<b>Economics Book</b>");
+            } else {
+                document.write("<b>Unknown Book</b>");
+            }
+        </script>
+    </body>
+</html>

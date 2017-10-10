@@ -1,0 +1,146 @@
+
+- Đối tượng Boolean trong JavaScript
+
+- Đối tượng Boolean biểu diễn hai giá trị hoặc 'true' hoặc 'false'. Nếu tham số value bị bỏ qua hoặc 0, -0, null, false, NaN, undefined, hoặc một chuỗi trống (""), đối tượng có một giá trị khởi tạo là false.
+
+- Cú pháp:
+var val = new Boolean(value);
+
+- Các thuộc tính của Boolean:
+
++ constructor: Trả về một tham chiếu tới hàm Boolean mà tạo đối tượng đó.
+
++ prototype: Thuộc tính prototype cho phép bạn thêm các thuộc tính và phương thức tới một đối tượng.
+
++ Thuộc tính constructor:
+Phương thức Boolean constructor() trong JavaScript trả về một tham chiếu tới hàm Boolean mà tạo prototype của instance.
+
+Cú pháp:
+boolean.constructor()
+
+Trả về giá trị:
+Trả về hàm mà tạo instance của đối tượng này.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var bool = new Boolean();
+            document.write("bool.constructor() is: " + bool.constructor);
+        </script>
+    </body>
+</html>
+
++ Thuộc tính prototype:
+Thuộc tính prototype cho phép bạn thêm các thuộc tính và phương thức tới bất kỳ đối tượng nào (Number, Boolean, String, Date,...).
+
+Ghi chú:
+Prototype là một thuộc tính Global mà có sẵn với hầu hết tất cả đối tượng.
+
+Cú pháp:
+object.prototype.name = value
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function book(title, author) {
+                this.title = title;
+                this.author = author;
+            }
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var myBook = new book("Java", "Nguyen Tuan");
+            book.prototype.price = null;
+            myBook.price = 1000;
+            document.write("Book title is : " + myBook.title + "<br />");
+            document.write("Book author is : " + myBook.author + "<br />");
+            document.write("Book price is : " + myBook.price + "<br />");
+        </script>
+    </body>
+</html>
+
+- Các phương thức của Boolean:
+
++ toSource(): Trả về một chuỗi chứa nguồn của đối tượng Boolean, bạn có thể sử dụng chuỗi này để tại một đối tượng tương đương.
+
++ toString(): Trả về một chuỗi hoặc "true" hoặc "false" phụ thuộc vào giá trị của đối tượng.
+
++ valueOf(): Trả về giá trị số nguyên thủy của boolean. 
+
++ Phương thức toSource:
+Phương thức Boolean toSource() trong JavaScript trả về một chuỗi biểu diễn code nguồn của đối tượng.
+
+Ghi chú:
+Phương thức này không tương thích với tất cả trình duyệt.
+
+Trả về giá trị:
+Trả về một chuỗi biểu diễn code nguồn của đối tượng đó.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function book(title, publisher, price) {
+                this.title = title;
+                this.publisher = publisher;
+                this.price = price;
+            }
+            var newBook = new book("Java", "Nguyen Tuan", 1000);
+            document.write(newBook.toSource());
+        </script>
+    </body>
+</html>
+
++ Phương thức toString:
+Phương thức này trả về một chuỗi hoặc true, hoặc false phụ thuộc vào giá trị của đối tượng.
+
+Cú pháp:
+boolean.toString()
+
+Trả về giá trị:
+Trả về một chuỗi biểu diễn đối tượng Boolean đã xác định.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var flag = new Boolean(false);
+            document.write("flag.toString is: " + flag.toString());
+        </script>
+    </body>
+</html>
+
++ Phương thức valueOf:
+Phương thức Boolean valueOf() trong JavaScript trả về giá trị gốc của đối tượng Boolean đã xác định.
+
+Cú pháp:
+boolean.valueOf()
+
+Trả về giá trị:
+Trả về một chuỗi biểu diễn đối tượng Boolean đã xác định.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var flag = new Boolean(false);
+            document.write("flag.valueOf is: " + flag.valueOf());
+        </script>
+    </body>
+</html>

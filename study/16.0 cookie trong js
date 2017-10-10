@@ -1,0 +1,149 @@
+
+- JavaScript và Cookie
+
+- Cookie là gì?
+Các trình duyệt và WebServer sử dụng giao thức HTTP để giao tiếp và HTTP là Stateless Protocol (không lưu trạng thái của client trên server).
+Những đối với một Website thương mại, nó được yêu cầu duy trì thông tin phiên (session) trong các trang khác nhau. Ví dụ, một đăng ký người sử dụng kết thức sau khi hoàn thành đăng ký ở nhiều trang.
+Nhưng cách để duy trì thông tin phiên của người dùng dọc theo tất cả các trang là như thế nào.
+
+Trong nhiều tình huống, sử dụng Cookie là phương thức hiệu quả nhất để nhớ và theo dấu vết của việc đặt mua, đặt bán, các ưu đãi và thông tin khác được yêu cầu cho sự trải nghiệm tốt hơn của khác truy cập hoặc thống kê site.
+
+- Cách nó làm việc?
+Server của bạn gửi một số dữ liệu tới trình duyệt người dùng một mẫu dạng cookie. Trình duyệt có thể chấp nhận cookie đó.
+Nếu chấp nhận, nó được lưu trữ như là một bản ghi thuần văn bản trên phần cứng của khách truy cập.
+Bây giờ, khi khách truy cập đến một trang khác trên site của bạn, trình duyệt gửi cookie giống như thế tới Server để thu hồi.
+Khi được thu hồi, Server của bạn biết/nhớ những gì đã lưu trước đó.
+
+Các Cookie là bản ghi dữ liệu thuần văn bản của 5 trường biến:
+Expires: Ngày cookie sẽ hết hạn. Nếu nó để trống, thì cookie sẽ hết hạn khi khác truy cập thoát khỏi trình duyệt.
+Domain: Tên miền của site người dùng.
+Path: Đường truyền tới thư mục hoặc trang web mà thiết lập cookie. Nó có thể là trống nếu bạn muốn thu nhận cookie từ bất kỳ thư mục hoặc trang nào.
+Secure: Nếu trường này chứa "secure", thì khi đó cookie chỉ có thể được thu nhận với một Server an toàn.
+Nếu trường này trống, sẽ không có giới hạn nào.
+Name = Value: Cookie được thiết lập và được thu nhận trong các form các cặp khóa-giá trị (key-value).
+
+Các cookie ban đầu được thiết kế cho chương trình CGI. Dữ liệu chứa trong một Cookie tự động truyền tải giữa trình duyệt và WebServer, vì thế CGI script trên Server có thể đọc và ghi các giá trị cookie mà được lưu trên Client.
+JavaScript cũng có thể thao tác Cookie bởi sử dụng thuộc tính cookie của đối tượng Document. JavaScript có thể đọc, tạo, chỉnh sửa và xóa các cookie mà áp dụng tới trang web hiện tại.
+
+- Lưu giữ Cookies
+Cách đơn giản nhất để tạo một cookie là để gán một giá trị chuỗi tới đối tượng document.cookie, mà trông như sau:
+document.cookie = "key1=value1;key2=value2;expires=date;";
+
+Ở đây thuộc tính expires là tùy ý. Nếu bạn cung cấp thuộc tính này với ngày hoặc thời gian hợp lệ, thì khi đó cookie sẽ hết bạn với ngày hoặc thời gian đã cho, và sau đó giá trị của cookie sẽ không có thể truy cập.
+Ghi chú: Các giá tị cookie không thể chứa dấu chấm phẩy, dấu phẩy, hoặc khoảng trống. Đối với lý do này, bạn có thể muốn sử dụng hàm JavaScript escape() để mã hóa giá trị trước khi lưu trữ nó trong cookie.
+Nếu bạn làm điều này, bạn cũng sẽ phải sử dụng hàm unescape() tương ứng khi bạn đọc giá trị cookie.
+
+Ví dụ:
+Thiết lập một tên khách hàng trong đầu vào của cookie.
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <script type="text/javascript">
+            function WriteCookie(){
+                if (document.myform.customer.value == "") {
+                    alert("Enter some value!");
+                    return;
+                }
+                cookievalue = escape(document.myform.customer.value) + ";";
+                document.cookie = "name = " + cookievalue;
+                document.write("Setting Cookie: " + " name = " + cookievalue);
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform" action="">
+            Enter name: <input type="text" name="customer" />
+            <input type="button" value="Set Cookie" onclick="WriteCookie()" />
+        </form>
+    </body>
+</html>
+
+- Đọc Cookies
+Đọc một cookie là đơn guản như viết nó, bởi vì giá trị của đối tượng document.cookie là cookie. Vì thế bạn có thể sử dụng chuỗi này bất cứ khi nào bạn muốn truy cập cookie đó.
+Chuỗi document.cookie sẽ giữ một danh sách các cặp tên-giá trị phân biệt nhau vởi dấu chấm phẩy, ở đây name là tên của cookie và giá trị là giá trị chuỗi của nó.
+Bạn có thể sử dụng hàm split() để phá vỡ một chuỗi thành khóa và các giá trị như sau.
+
++ Ví dụ:
+Đọc cookie trong JavaScript
+Ghi chú: Ở đây length là phương thức của lớp Array mà trả về độ dài của một mảng.
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <script type="text/javascript">
+            function ReadCookie() {
+                var allcookie = document.cookie; linebreak="<br />";
+                document.write("All Cookies: " + allcookie);
+                document.write(linebreak);
+                cookiearray = allcookie.split(';');
+
+                for (var i=0; i<cookiearray.length; i++) {
+                    name = cookiearray[i].split('=')[0];
+                    value = cookiearray[i].split('=')[1];
+                    document.write("Key is: " + name + linebreak + "Value is: " + value);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform" action="">
+            <p>Click the following button and see the result: </p>
+            <input type="button" value="Get Cookie" onclick="ReadCookie()" />
+    </body>
+</html>
+
+- Thiết lập ngày hết hạn Cookie
+Bạn có thể gia hạn vòng sống của một cookie trên phiên trình duyệt hiện tại với thiết lập một ngày hết hạn và lưu trên Expires Date trong cookie.
+Điều này có thể được thực hiện bởi thiết lập thuộc tính expires với ngày và thời gian.
+
++ Ví dụ:
+Thiết lập ngày hết hạn cookie trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function WriteCookie() {
+                var now = new Date();
+                now.setMonth(now.getMonth() + 1);
+                cookievalue = escape(document.myform.customer.value) + ";"
+
+                document.cookie = "name = " + cookievalue;
+                document.cookie = "expires = " + now.toUTCString() + ";"
+                document.write("Setting Cookies: " + "name = " + cookievalue);
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform" action="">
+            Enter name: <input type="text" name="customer" />
+            <input type="button" value="Set Cookie" onclick="WriteCookie()" />
+        </form>
+    </body>
+</html>
+
+- Xóa một Cookie
+Đôi khi bạn muốn xóa một cookie khi mà sau các cố gắng đọc một cookie mà không trả về bất cứ thứ gì. Để làm điều này, bạn chỉ cần thiết lập Expires Date về một thời điểm trong quá khứ.
+
++ Ví dụ:
+Xóa cookie trogn JavaScript. Minh họa xóa một cookie bởi thiết lập Expires Date về một tháng trước ngày hiện tại.
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function WriteCookie() {
+                var now = new Date();
+                now.setMonth(now.getMonth() - 1);
+                cookievalue = escape(document.myform.customer.value) + ";"
+
+                document.cookie = "name = " + cookievalue;
+                document.cookie = "expires = " + now.toUTCString() + ";"
+                document.write("Setting Cookies: " + "name = " + cookievalue);
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform" action="">
+            Enter name: <input type="text" name="customer" />
+            <input type="button" value="Set Cookie" onclick="WriteCookie()" />
+        </form>
+    </body>
+</html>

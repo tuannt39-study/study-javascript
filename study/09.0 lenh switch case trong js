@@ -1,0 +1,72 @@
+
+- Lệnh Switch Case trong JavaScript
+
+- Bạn có thể sử dụng nhiều lệnh if else if như trong chương trước để thực hiện một nhánh nhiều lựa chọn.
+Tuy nhiên nó luôn luôn không phải là giải pháp tốt nhất, đặc biệt là khi tất cả các nhánh phụ thuộc vào giá trị của một biến đơn.
+Bất đầu với JavaScript 1.2 bạn có thể sử dụng lệnh switch để xử lý chính xác tình huống này và nó thực sự hiệu quả hơn so với việc lặp đi lặp lại các lệnh if else if.
+
+- Sơ đồ thực hiện:
+- Cú pháp:
+Mục tiêu của một lênh switch là cung cấp một biểu thức để ước lượng và một số lệnh khác nhau để thực thi trên cơ sở giá trị của biểu thức.
+Bộ thông dịch kiểm tra mỗi case - trường hợp với giá trị của biểu thức tới khi tìm thấy một sự so khớp.
+Nếu không có so khớp nào, một điều kiện default - mặc định sẽ được sử dụng.
+switch (expression) {
+   case condition 1: statement(s)
+   break;
+   case condition 2: statement(s)
+   break;
+   ...
+   case condition n: statement(s)
+   break;
+   default: statement(s)
+}
+Lệnh break chỉ dẫn phần cuối của mỗi trường hợp cụ thể. Nếu chúng bị bỏ quên, bộ thông dịch sẽ tiếp tực thực thi mỗi lệnh trong mỗi trường hợp sau.
+
++ Sử dụng switch - case trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var grade = "B"; linebreak = "<br />";
+
+            document.write("grade = " + grade);
+            document.write(linebreak);
+
+             switch (grade) {
+               case 'A': document.write("Good job<br />");
+               break;
+               case 'B': document.write("Pretty good<br />");
+               break;
+               case 'C': document.write("Passed<br />");
+               break;
+               case 'D': document.write("Not so good<br />");
+               break;
+               case 'F': document.write("Failed<br />");
+               break;
+               default:  document.write("Unknown grade<br />")
+            }
+        </script>
+    </body>
+</html>
+
++ Các lệnh break đóng một vai trò quan trọng trong các lệnh switch-case.
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var grade = "B"; linebreak = "<br />";
+
+            document.write("grade = " + grade);
+            document.write(linebreak);
+
+             switch (grade) {
+               case 'A': document.write("Good job<br />");
+               case 'B': document.write("Pretty good<br />");
+               case 'C': document.write("Passed<br />");
+               case 'D': document.write("Not so good<br />");
+               case 'F': document.write("Failed<br />");
+               default:  document.write("Unknown grade<br />")
+            }
+        </script>
+    </body>
+</html>

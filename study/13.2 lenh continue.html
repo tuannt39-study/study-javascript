@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var x = 1; linebreak = "<br />";
+            document.write("x = " + x);
+            document.write(linebreak);
+
+            document.write("Entering the loop<br /> ");
+            while (x<10) {
+                x++;
+                if (x == 5) {
+                    continue;
+                }
+                document.write("x = " + x + linebreak);
+            }
+            document.write("Exitting the loop! <br />");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+
+- Vòng lặp for trong JavaScript
+
+- Vòng lặp for là mẫu vòng ngắn gọn nhất. Nó bao gồm 3 phần quan trọng:
++ Phần khởi tạo vòng lặp - initialization, nơi chúng ta khởi tạo phép tính tới một giá trị bắt đầu. Lệnh khởi tạo được thực thi trước khi vòng lặp bắt đầu.
++ Phần kiểm tra lệnh - test statement mà sẽ kiểm tra nếu một điều kiện đã cho là true hoặc không. Nếu điều kiện là true, thì khi đó code đã cho bên trong vòng lặp sẽ được thực thi, nếu không thì điều khiển sẽ thoát ra khỏi vòng lặp.
++ Phần lệnh lặp lại - iteration statement, nơi bạn có thể tăng hoặc giảm phép tính của bạn.
+
+- Cú pháp:
+for (initialization; test condition; iteration statement){
+   Statement(s) to be executed if test condition is true
+}
+
+- Sử dụng vòng lặp for trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type = "text/javascript">
+            var count = 0; linebreak = "<br />";
+
+            document.write("count = " + count);
+            document.write(linebreak);
+
+            document.write("Starting Loop" + "<br />");
+
+            for (count = 0; count < 10; count++){
+                document.write("Current Count: " + count);
+                document.write(linebreak);
+            }
+
+            document.write("Loop stopped");
+        </script>
+    </body>
+</html>

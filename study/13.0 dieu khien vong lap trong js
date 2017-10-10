@@ -1,0 +1,107 @@
+
+- Điều khiển vòng lặp trong JavaScript
+
+- JavaScript cũng cấp sự điều khiển cao để xử lý các lệnh vòng lặp và lệnh switch.
+Có thể có một tình huống khi bạn cần thoát khỏi vòng lặp mà không phải đi tới điểm cuối của nó.
+CŨng có thể có tình huống khi bạn muốn nhảy qua một phần của khối code và bắt đầu vòng lặp tiếp theo.
+Để xử lý các tình huống trên, JavaScript cũng cấp lệnh break và continue.
+Những lệnh này được sử dụng để thoát khỏi ngay lập tức bất kỳ vòng lặp nào hoặc để bắt đầu vòng lặp tiếp theo của bất kỳ vòng lặp tương ứng.
+
+- Lệnh break:
+Lệnh break, đã được giới thiệu ngắn gọn với lệnh switch, được sử dụng để thoát sớm ra khởi một vòng lặp, thoát khỏi khu vực '}'.
+
++ Sử dụng lệnh break với vòng lặp while trong JavaScript. Chú ý các vòng lặp thoát sớm ra khi x tiến tới 5 và đi tới lệnh document.write(..) ngay bên dưới '}'.
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var x = 1; linebreak = "<br />";
+            document.write("x = " + x);
+            document.write(linebreak);
+
+            document.write("Entering the loop<br /> ");
+            while (x<20) {
+                if (x == 5) {
+                    break;
+                }
+                x++;
+                document.write("x = " + x + linebreak);
+            }
+            document.write("Exitting the loop! <br />");
+        </script>
+    </body>
+</html>
+
+- Lệnh continue:
+Lệnh continue nói cho bộ thông dịch ngay lập tức bắt đầu lần lặp tiếp theo của vòng lặp này và nhảy qua khối code còn lại.
+Khi một lệnh continue được bắt gặp, luồng chương trình di chuyển ngay lập tức tới biểu thức kiểm tra và nếu điều kiện còn true, sau đó nó bắt đầu lần lặp tiếp theo, nếu không thì điểu khiển thoát khỏi vòng lặp.
+
++ Sử dụng lệnh continue với vòng lặp while trong JavaScript. Chú ý cách lệnh continue được sử dụng để nhảy qua việc in khi chỉ mục được giữ trong giá trị x tiến tới 5.
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var x = 1; linebreak = "<br />";
+            document.write("x = " + x);
+            document.write(linebreak);
+
+            document.write("Entering the loop<br /> ");
+            while (x<20) {
+                x++;
+                if (x == 5) {
+                    continue;
+                }
+                document.write("x = " + x + linebreak);
+            }
+            document.write("Exitting the loop! <br />");
+        </script>
+    </body>
+</html>
+
+- Sử dụng Label để điều khiển luồn (Flow)
+Bắt đầu từ JavaScript 1.2, một Label (nhãn hiệu) có thể được sử dụng với break và continue để điều khiển luồn chính xác hơn.
+Một label đơn giản là một định danh được theo bởi một dấu hai chám ':' mà được áp dụng tới một lệnh hoặc một khối code.
+Chúng ta sẽ xem hai ví dụ khác nhau để hiểu cách sử dụng các label với break và continue.
++ Ghi chú: Các dòng ngắt là không được phép giữa lệnh continue hoặc break và tên label của nó. Ngoài ra cũng không nên có bất kỳ lệnh nào ở giữa một tên label và vòng lặp liên kết.
+
++ Sử dụng Label với một lệnh break:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script tyoe = "text/javascript">
+            document.write("Entering the loop! <br />");
+            outerloop:
+            for (var i = 0; i < 5; i++){
+                document.write("Outerloop: " + i + "<br />");
+                innerloop:
+                for (var j = 0; j < 5; j++){
+                    if (j > 3) break;
+                    if (i == 2) break innerloop;
+                    if (j == 4) break outerloop;
+                    document.write("Innerlopp: " + j + "<br />");
+                }
+            }
+            document.write("Exitting the loop! <br />");
+        </script>
+    </body>
+</html>
+
++ Sử dụng Label với một lệnh continue:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script tyoe = "text/javascript">
+            document.write("Entering the loop! <br />");
+            outerloop:
+            for (var i = 0; i < 3; i++){
+                document.write("Outerloop: " + i + "<br />");
+                innerloop:
+                for (var j = 0; j < 5; j++){
+                    if (j == 3) continue outerloop;
+                    document.write("Innerlopp: " + j + "<br />");
+                }
+            }
+            document.write("Exitting the loop! <br />");
+        </script>
+    </body>
+</html>

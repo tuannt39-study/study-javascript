@@ -1,0 +1,154 @@
+
+- Sự kiện (Event) trong JavaScript
+
+- Sự kiện là gì?
+Sự tương tác của JavaScript với HTML được xử lý thông qua các sự kiện xảy ra khi người sử dụng hoặc trình duyệt thao tác một trang.
+Khi một trang tải, nó được gọi là một sự kiện (Event). Khi người sử dungk click vào một nút, thì click đó cũng là một sự kiện.
+Các ví dụ về sự kiện khác nhau như nhấn một phím, đóng một cửa sổ, tăng giảm cửa sổ,...
+Nhà lập trình có thể sử dụng những sự kiện này để thực thi các phản hồi được mã hóa bởi JavaScript, như các nút để đóng cửa sổ, các thông báo được hiển thị tới người dùng,...
+Các sự kiện là một phần của Document Object Model (DOM) Level 3 và mỗi phần tử HTML chứa một tập hợp các sự kiện mà có thể kích hoạt JavaScript code.
+
+- Kiểu sự kiện onclick
+Đây là sự kiện được sử dụng thường xuyên nhất khi một người dùng click chuột trái. Bạn cps thể đặt sự xác nhận, cảnh báo,... của bạn đối với kiểu sự kiện này.
+
++ Ví dự:
+Sử dụng sử kiện onclick trong JavaScript:
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <script type="text/javascript">
+            function sayHello() {
+                alert("Hello nhe!");
+            }
+        </script>
+    </head>
+    <body>
+        <p>Xin chao nhe</p>
+        <form>
+            <input type="button" onclick="sayHello()" value="Hello" />
+        </form>
+    </body>
+</html>
+
+- Kiểu sự kiện onsubmit
+Đây là một kiểu sự kiện khi bạn cố gắng đệ trình một form. Bạn có thể đặt xác nhận form đối với kiểu sự kiện này.
+
++ Ví dụ:
+Sử dụng onsubmit trong JavaScript. Tại đây chúng ta sẽ gọi một hàm validate() trước khi đệ trình một dữ liệu form tới WebServer.
+Nếu hàm validate() trả về true, form sẽ được đệ trình, nếu không thì nó sẽ không đệ trình dữ liệu.
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function validation() {
+                all validation goes here
+                ................
+                return either true or false
+            }
+        </script>
+    </head>
+    <body>
+        <form method="POST" action="t.cgi" onsubmit="return validate()">
+            ..............
+            <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>
+
+- Kiểu sự kiện onmouseover và onmouseout
+Hai kiểu sự kiện này sẽ giúp bạn tạo các hiệu quả đẹp với hình ảnh hoặc ngay cả với văn bản. Sự kiện onmouseover kích hoạt khi bạn di chuyển chuột qua bất kỳ phần từ nào và onmouseout kích hoạt khi bạn di chuyển ra khỏi phần tử đó.
+
++ Ví dụ:
+Sử dụng onmouseover và onmouseout trong JavaScript:
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <script type="text/javascript">
+            function over() {
+                document.write("Mouse Over");
+            }
+            function out() {
+                document.write("Mouse Out");
+            }
+        </script>
+    </head>
+    <body>
+        <p>Xin chao cac ban</p>
+        <div onmouseover="over()" onmouseout="out()">
+            <h2>Xin chao nhe</h2>
+        </div>
+    </body>
+</hmtl>
+
+- Sự kiện HTML5 chuẩn
+Thuộc tính	Giá trị	Miêu tả
+Offline	-----   	Kích hoạt khi tài liệu ở ngoại tuyến
+Onabort	-----   	Kích hoạt trên một sự kiện bỏ dở
+onafterprint	-----   	Kích hoạt sau khi tài liệu được in
+onbeforeonload	-----   	Kích hoạt trước khi tài liệu tải
+onbeforeprint	-----   	Kích hoạt trước khi tài liệu được in
+onblur	-----   	Kích hoạt khi cửa sổ mất trọng tâm
+oncanplay	-----   	Kích hoạt khi media có thể bắt đầu chơi, nhưng phải dừng để đệm
+oncanplaythrough	-----   	Kích hoạt khi media có thể chơi tới cuối, mà không dừng để đệm
+onchange	-----   	Kích hoạt khi một phần tử thay đổi
+onclick	-----   	Kích hoạt trên một cú click chuột
+oncontextmenu	-----   	Kích hoạt khi menu ngữ cảnh bị kích hoạt
+ondblclick	-----   	Kích hoạt khi nhấp đúp chuột
+ondrag	-----   	Kích hoạt khi một phần tử bị kéo
+ondragend	-----   	Kích hoạt tại phần cuối của hoạt động kéo
+ondragenter	-----   	Kích hoạt khi một phần tử đã được kéo tới một mục tiêu thả hợp lệ
+ondragleave	-----   	Kích hoạt khi một phần tử đang được kéo qua một mục tiêu thả hợp lệ
+ondragover	-----   	Kích hoạt tại phần đầu của hoạt động kéo
+ondragstart	-----   	Kích hoạt tại phần đầu của hoạt động kéo
+ondrop	-----   	Kích hoạt khi phần tử được kéo đang được thả
+ondurationchange	-----   	Kích hoạt khi độ dài của media được thay đổi
+onemptied	-----   	Kích hoạt khi phần tử nguồn media đột nhiên trở nên trống
+onended	-----   	Kích hoạt khi media tiến tới cuối cùng
+onerror	-----   	Kích hoạt khi một lỗi xảy ra
+onfocus	-----   	Kích hoạt khi cửa sổ nhận trọng tâm
+onformchange	-----   	Kích hoạt khi một form thay đổi
+onforminput	-----   	Kích hoạt khi một form nhận input từ người dùng
+onhaschange	-----   	Kích hoạt khi tài liệu có thay đổi
+oninput	-----   	Kích hoạt khi một phần tử nhận đầu vào từ người dùng
+oninvalid	-----   	Kích hoạt khi một phần tử không hợp lệ
+onkeydown	-----   	Kích hoạt khi một phím bị nhấn
+onkeypress	-----   	Kích hoạt khi một phím bị nhấn và được thả ra
+onkeyup	-----   	Kích hoạt khi một phím được thả ra
+onload	-----   	Kích hoạt khi tài liệu tải
+onloadeddata	-----   	Kích hoạt khi dữ liệu media được tải
+onloadedmetadata	-----   	Kích hoạt khi thời gian và dữ liệu khác của một phần tử media được tải
+onloadstart	-----   	Kích hoạt khi trình duyệt bắt đầu tải dữ liệu media
+onmessage	-----   	Kích hoạt khi thông báo được kích hoạt
+onmousedown	-----   	Kích hoạt khi một nút chuột được nhả ra
+onmousemove	-----   	Kích hoạt khi con trỏ chuột di chuyển
+onmouseout	-----   	Kích hoạt khi con trỏ chuột di chuyển ra khỏi một phần tử
+onmouseover	-----   	Kích hoạt khi con trỏ chuột di chuyển qua một phần tử
+onmouseup	-----   	Kích hoạt khi một nút chuột được nhả ra
+onmousewheel	-----   	Kích hoạt khi bánh xe chuột được quay
+onoffline	-----   	Kích hoạt khi tài liệu ở ngoại tuyến
+onoine	-----   	Kích hoạt khi tài liệu ở trực tuyến
+ononline	-----   	Kích hoạt khi tài liệu ở trực tuyến
+onpagehide	-----   	Kích hoạt khi cửa sổ bị ẩn
+onpageshow	-----   	Kích hoạt khi cửa sổ trở nên nhìn thấy
+onpause	-----   	Kích hoạt khi dữ liệu media bị dừng
+onplay	-----   	Kích hoạt khi dữ liệu media chuẩn bị bắt đầu chơi
+onplaying	-----   	Kích hoạt khi dữ liệu media đang bắt đầu chơi
+onpopstate	-----   	Kích hoạt khi lịch sử cửa sổ thay đổi
+onprogress	-----   	Kích hoạt khi trình duyệt đang nhận dữ liệu media
+onratechange	-----   	Kích hoạt khi tốc độ chơi của media đã thay đổi
+onreadystatechange	-----   	Kích hoạt khi trạng thái sẵn sàng thay đổi
+onredo	-----   	Kích hoạt khi tài liệu thực hiện một redo
+onresize	-----   	Kích hoạt khi cửa sổ bị thay đổi kích cỡ
+onscroll	-----   	Kích hoạt khi thanh cuốn của phần tử đang được cuốn
+onseeked	-----   	Kích hoạt khi thuộc tính seeking của một phần tử media không còn true, và seeking đã kết thúc
+onseeking	-----   	Kích hoạt khi thuộc tính seeking của một phần tử media là true, và seeking đã bắt đầu
+onselect	-----   	Kích hoạt khi một phần tử được chọn
+onstalled	-----   	Kích hoạt khi có một lỗi trong quá trình thu nhận dữ liệu media
+onstorage	-----   	Kích hoạt khi một tài liệu tải
+onsubmit	-----   	Kích hoạt khi một form được đệ trình
+onsuspend	-----   	Kích hoạt khi trình duyệt đã đang thu nhận dữ liệu media, nhưng đã dừng lại trước khi toàn bộ media file được thu nhận
+ontimeupdate	-----   	Kích hoạt khi media thay đổi vị trí chơi của nó
+onundo	-----   	Kích hoạt khi một tài liệu thực hiện một undo
+onunload	-----   	Kích hoạt khi người sử dụng rời khỏi tài liệu
+onvolumechange	-----   	Kích hoạt khi media thay đổi âm lượng, kể cả khi media được thiết lập là mute
+onwaiting	-----   	Kích hoạt khi media đã dừng chơi nhưng được mong chờ phục hồi.

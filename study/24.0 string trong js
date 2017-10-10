@@ -1,0 +1,452 @@
+
+- Đối tượng String trong JavaScript
+
+- Đối tượng String giúp bạn làm việc với một dãy các ký tụ, nó giúp xử lý các dữ liệu chuỗi gốc trong JavaScript với một số phương thức giúp đỡ.
+
+- Khi JavaScript tự động biến đổi giữa chuỗi gốc và các đối tượng String trên một chuỗi gốc.
+
+- Cú pháp:
+var val = new String (string);
+Tham số string là một dãy các ký tự mà đã được mã hóa một cách chính xác.
+
+- Các thuộc tính của String:
+
++ constructor: Trả về một tham chiếu tới hàm String mà tạo đối tượng đó.
+
++ length: Trả về độ dài của chuỗi
+
++ prototype: Thuộc tính prototype cho phép bạn thêm các thuộc tính và phương thức tới một đối tượng.
+
++ Thuộc tính constructor:
+Một constructor trả về một tham chiếu tới hàm string mà tạo prototype của instance.
+
+Cú pháp:
+string.constructor
+
+Trả về giá trị:
+Trả về hàm mà tạo instance của đối tượng.
+
+Ví dụ:
+<!DOCTYPE hmtl>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str = new String("This is string");
+            document.write("str.constructor is: " + str.constructor);
+        </script>
+    </body>
+</html>
+
++ Thuộc tính length:
+Thuộc tính này trả về số ký tự trong một chuỗi.
+
+Cú pháp:
+string.length
+
+Trả về giá trị:
+Trả về số các ký tự trong một chuỗi.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str = new String("This is string");
+            document.write("str.length is: " + str.length);
+        </script>
+    </body>
+</html>
+
++ Thuộc tính prototype:
+Thuộc tính prototype cho phép bạn thêm các thuộc tính và phương thức tới bất kỳ đối tượng nào (Number, Boolean, String, Date,...).
+
+Ghi chú:
+Prototype là một thuộc tính Global mà có sẵn với hầu hết tất cả đối tượng.
+
+Cú pháp:
+object.prototype.name = value
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function book(title, author) {
+                this.title = title;
+                this.author = author;
+            }
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var myBook = new book("Java", "Nguyen Tuan");
+            book.prototype.price = null;
+            myBook.price = 1000;
+            document.write("Book title is : " + myBook.title + "<br />");
+            document.write("Book author is : " + myBook.author + "<br />");
+            document.write("Book price is : " + myBook.price + "<br />");
+        </script>
+    </body>
+</html>
+
+- Các phương thức của String:
++ charAt(): Trả về ký tự tại chỉ mục (index) đã xác định
+
++ charCodeAt(): Trả về một số chỉ dẫn giá trị Unicode của ký tự tại chỉ mục đã cho
+
++ concat(): so khớp văn bản của hai chuỗi và trả về một chuỗi mới
+
++ indexOf(): Trả về chỉ mục trong đối tượng String đang gọi của sự xảy ra đầu tiên của giá trị đã xác định, hoặc -1 nếu không tìm thấy
+
++ lastIndexOf(): Trả về chỉ mục trong đối tượng String đang gọi của sự xảy ra cuối cùng của giá trị đã xác định, hoặc -1 nếu không tìm thấy
+
++ localeCompare(): Trả về một số chỉ dẫn có hay không một chuỗi tham chiếu đến trước hoặc sau hoặc là giống với chuỗi đã cho trong thứ tự phân loại
+
++ match(): Được sử dụng để so khớp một Regular Expression với một chuỗi
+
++ replace(): Được sử dụng để tìm một so khớp giữa Regular Expression đã cho và một chuỗi, và để thay thế chuỗi phụ đã so khớp với một chuỗi phụ mới
+
++ search(): Thực thi việc tìm kiếm cho một sự so khớp giữa một Regular Expression và một chuỗi đã xác định
+
++ slice(): Trích (extract) một khu vực của một chuỗi và trả về một chuỗi mới
+
++ split(): Chia một đối tượng String thành một mảng của các chuỗi bằng việc phân chia chuỗi thành các chuỗi phụ
+
++ substr(): Trả về các ký tự trong một chuỗi bắt đầu tại vị trí đã xác định với một số ký tự đã xác định
+
++ substring(): Trả về các ký tự trong một chuỗi giữa hai chỉ mục (index) bên trong chuỗi đó
+
++ toLocaleLowerCase(): Các ký tự bên trong một chuỗi được biến đổi thành kiểu chữ thường đồng thời tôn trọng Locale hiện tại
+
++ toLocaleUpperCase(): Các ký tự bên trong một chuỗi được biến đổi thành kiểu chữ hoa đồng thời tôn trọng Locale hiện tại
+
++ toLowerCase(): Trả về giá trị chuỗi đang gọi được biến đổi thành kiểu chữ thường
+
++ toString(): Trả về một chuỗi biểu diễn đối tượng đã xác định
+
++ toUpperCase(): Trả về giá trị chuỗi đang gọi được biến đổi thành kiểu chữ hoa
+
++ valueOf(): Trả về giá trị gốc của đối tượng đã xác định
+
++ Phương thức charAt:
+Phương thức charAt() trả về ký tự từ chỉ mục (index) đã xác định.
+Các ký tự trong một chuỗi được lập chỉ mục từ trái qua phải. Chỉ mục của ký tự đầu tiên là 0 và chỉ mục của ký tự cuối trong một chuỗi, được gọi là stringName, là stringName.length - 1.
+
+Cú pháp:
+string.charAt(index);
+
+Chi tiết về tham số:
+index - Một integer giữa 0 và một số nhỏ hơn độ dài của chuỗi.
+
+Trả về giá trị:
+Trả về ký tự từ chỉ mục đã xác định.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str = new String("This is string")
+            document.write("str.charAt(0) is: " + str.charAt(0));
+            document.write("<br />str.charAt(1) is: " + str.charAt(1));
+            document.write("<br />str.charAt(2) is: " + str.charAt(2));
+            document.write("<br />str.charAt(3) is: " + str.charAt(3));
+            document.write("<br />str.charAt(4) is: " + str.charAt(4));
+            document.write("<br />str.charAt(5) is: " + str.charAt(5));
+            document.write("<br />str.charAt(6) is: " + str.charAt(6));
+        </script>
+    </body>
+</html>
+
++ Phương thức charCodeAt:
+Phương thức này trả về một số chỉ dẫn giá trị Unicode của ký tự tại chỉ mục đã cho.
+Mã Unicode chỉ dãy từ 0 tới 1,114,111. Các điểm 128 mã Unicode đầu tiên là một so khớp trực tiếp của mã hóa ký tự ASCII. 
+charCodeAt() luôn luôn trả về một giá trị mà nhỏ hơn 65,536.
+
+Cú pháp:
+string.charCodeAt(index);
+
+Chi tiết về tham số:
+index − Một integer giữa 0 và một số nhỏ hơn độ dài chuỗi; nếu không được xác định thì mặc định là 0.
+
+Trả về giá trị:
+Trả về một số
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str = new String("This is string")
+            document.write("str.charCodeAt(0) is: " + str.charCodeAt(0));
+            document.write("<br />str.charCodeAt(1) is: " + str.charCodeAt(1));
+            document.write("<br />str.charCodeAt(2) is: " + str.charCodeAt(2));
+            document.write("<br />str.charCodeAt(3) is: " + str.charCodeAt(3));
+            document.write("<br />str.charCodeAt(4) is: " + str.charCodeAt(4));
+            document.write("<br />str.charCodeAt(5) is: " + str.charCodeAt(5));
+            document.write("<br />str.charCodeAt(6) is: " + str.charCodeAt(6));
+        </script>
+    </body>
+</html>
+
++ Phương thức concat:
+Phương thức này so khớp hai hoặc nhiều chuỗi và trả về một chuỗi đơn mới.
+
+Cú pháp:
+string.concat(string2, string3[, ..., stringN]);
+
+Chi tiết về tham số:
+string2...stringN − Là các chuỗi để được so khớp với nhau.
+
+Trả về giá trị:
+Trả về một chuỗi đã so khớp đơn.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str1 = new String("This is string one");
+            var str2 = new String("This is string two");
+            var str3 = str1.concat( str2 );
+            document.write("Concatenated String: " + str3);
+        </script>
+    </body>
+</html>
+
++ Phương thức indexOf:
+Phương thức này trả về chỉ mục trong đối tượng String đang gọi của sự xảy ra đầu tiên của giá trị đã cho, bắt đầu tìm kiếm tại fromIndex hoặc -1 nếu giá trị không được tìm thấy.
+
+Cú pháp:
+string.indexOf(searchValue[, fromIndex])
+
+Chi tiết về tham số:
+searchValue - Một chuỗi biểu diễn giá trị để tìm kiếm.
+fromIndex - Vị trí trong chuỗi đang gọi để bắt đầu tìm kiếm. Nó có thể là bất kỳ giá trị integer nào giữa 0 và độ dài chuỗi. Giá trị mặc định là 0.
+
+Trả về giá trị:
+Trả về chỉ mục của sự kiện được tìm thấy, nếu không tìm thấy là -1
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str1 = new String( "This is string one" );
+
+            var index = str1.indexOf( "string" );
+            document.write("indexOf found String :" + index );
+
+            document.write("<br />");
+            var index = str1.indexOf( "one" );
+            document.write("indexOf found String :" + index );
+
+            document.write("<br />");
+            var index = str1.indexOf( "n" );
+            document.write("indexOf found String :" + index ); 
+        </script>
+    </body>
+</html>
+
++ Phương thức lastIndexOf:
+Phương thức này trả về chỉ mục trong đối tượng chuỗi đang gọi của sự xảy ra cuối của giá trị đã cho, bắt đầu tìm kiếm tại fromIndex hoặc -1 nếu giá trị không được tìm thấy.
+
+Cú pháp:
+string.lastIndexOf(searchValue[, fromIndex])
+
+Chi tiết về tham số:
+searchValue − Một chuỗi biểu diễn giá trị để tìm kiếm.
+fromIndex − Vị trí trong chuỗi đang gọi để bắt đầu tìm kiếm. Nó có thể là bất kỳ giá trị integer nào giữa 0 và độ dài chuỗi. Giá trị mặc định là 0.
+
+Trả về giá trị:
+Trả về giá trị của sự xảy ra cuối được tìm thấy, nếu không tìm thấy là -1.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str1 = new String( "This is string one and again string" );
+            var index = str1.lastIndexOf( "string" );
+            document.write("lastIndexOf found String :" + index ); 
+            
+            document.write("<br />");
+            var index = str1.lastIndexOf( "one" );
+            document.write("lastIndexOf found String :" + index );
+
+            document.write("<br />");
+            var index = str1.lastIndexOf( "i" );
+            document.write("lastIndexOf found String :" + index );
+        </script>
+    </body>
+</html>
+
++ Phương thức localeCompare:
+Phương thức này trả về một số chỉ dẫn có hay không một chuỗi tham chiếu ở trước hoặc sau hoặc giống với chuỗi đã cho trong thứ tự đã phân loại.
+
+Cú pháp:
+string.localeCompare(param)
+
+Chi tiết về tham số:
+param − Một chuỗi để được so sánh với đối tượng string.
+
+Trả về giá trị:
+0 − Nếu chuỗi so khớp là 100%.
+1 − Không có sự so khớp, và giá trị tham số ở trước giá trị đối tượng string trong thứ tự đã phân loại.
+-1 − Không có sự so khớp, và giá trị tham số ở sau giá trị đối tượng string trong thứ tự đã phân loại.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str1 = new String( "This is beautiful string" );
+            var index = str1.localeCompare( "XYZ" );
+            document.write("localeCompare first: " + index );
+            
+            document.write("<br />" );
+            var index = str1.localeCompare( "AbCD ?" );
+            document.write("localeCompare second: " + index );
+            
+            document.write("<br />" );
+            var index = str1.localeCompare( "beautiful" );
+            document.write("localeCompare three: " + index );
+            
+            document.write("<br />" );
+            var index = str1.localeCompare( "This is beautiful string" );
+            document.write("localeCompare four: " + index );
+        </script>
+    </body>
+</html>
+
++ Phương thức match:
+Phương thức này được sử dụng để thu nhận sự so khớp giữa một chuỗi với một Regular Expression.
+
+Cú pháp:
+string.match( param )
+
+Chi tiết về tham số:
+param − A regular expression object.
+
+Trả về giá trị:
+Nếu Regular Expression không bao gồm g flag, nó trả về cùng kết quả như regexp.exec(string).
+Nếu Regular Expression bao gồm g flag, phương thức này trả về một Mảng chứa tất cả các sự so khớp.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str = "For more information, see Chapter 3.4.5.1";
+            var re = /(chapter \d+(\.\d)*)/i;
+            var found = str.match( re );
+            
+            document.write(found ); 
+        </script>
+    </body>
+</html>
+
++ Phương thức replace:
+Phương thức này tìm một sự so khớp giữa một Regular Expression và một chuỗi, và đổi vị trí chuỗi phụ đã so khớp với một chuỗi phụ mới.
+
+Chuỗi thay thế này có thể bao gồm các mẫu đặc biệt sau:
+$$ - Chèn một "$".
+$& - Chèn một chuỗi phụ được so khớp.
+$` - Chèn một phần của chuỗi mà đặt trước chuỗi phụ được so khớp.
+$' - Chèn một phần của chuỗi mà theo sau chuỗi phụ được so khớp.
+$n or $nn - Ở đây n hoặc nn là các chữ số thập phân, chèn chuỗi so khớp phụ được đặt trong dấu ngoặc đơn thứ n, được cung cấp bởi tham số đầu tiên là một đối tượng RegExp.
+
+Cú pháp:
+string.replace(regexp/substr, newSubStr/function[, flags]);
+
+Chi tiết về tham số
+regexp − Một đối tượng RegExp. so khớp được đổi vị trí bởi giá trị trả về của tham số #2.
+substr − Một String mà là được để đổi vị trí bởi newSubStr.
+newSubStr − String mà đổi vị trí cho chuỗi phụ đã nhận từ tham số #1.
+Hàm − Một hàm để được gọi để tạo chuỗi phụ mới.
+flags − Một String chứa bất kỳ sự so khớp nào của RegExp với các flag: g – so khớp Global, i – bỏ qua (ignore), m – so khớp qua nhiều dòng (Multiline). Tham số này chỉ được sử dụng nếu tham số đầu tiên là một chuỗi.
+
+Trả về giá trị:
+Nó trả về một chuỗi mới được thay đổi.
+
+Ví dụ 1:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str = "Apples are round, and apples are juicy.";
+            var re = /apples/gi;
+            var newstr = str.replace(re, "oranges");
+            document.write(newstr); 
+        </script>
+    </body>
+</html>
+
+Ví dụ 2:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var str = "zara ali";
+            var re = /(\w+)\s(\w+)/;
+            var newstr = str.replace(re, "$2, $1");
+            document.write(newstr); 
+        </script>
+    </body>
+</html>
+
++ Phương thức search:
+Phương thức này thực thi một sự tìm kiếm cho sự so khớp giữa một Regular Expression và đối tượng String này.
+
+Cú pháp:
+string.search(regexp);
+
+Chi tiết về tham số:
+regexp − Một đối tượng Regular Expression. Nếu một đối tượng obj không là RegExp được truyền, nó hoàn toàn được biến đổi thành một RegExp bởi sử dụng new RegExp(obj).
+
+Trả về giá trị:
+Nếu thành công, phương thức trả về chỉ mục của Regular Expression bên trong String. Nếu không thì, nó trả về -1.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var re = /apples/gi;
+            var str = "Apples are round, and apples are juicy.";
+            if ( str.search(re) == -1 ){
+                document.write("Does not contain Apples" );
+            } else {
+                document.write("Contains Apples" );
+            }
+        </script>
+    </body>
+</html>
+
++ Phương thức slice:
+
+

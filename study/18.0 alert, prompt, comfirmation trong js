@@ -1,0 +1,89 @@
+
+- Thông báo - Alert, hộp thoại gợi ý - Prompt, hộp thoại xác nhận - Comfirmation trong JavaScript
+
+- JavaScript hỗ trợ 3 kiểu hộp thoại quan trọng. Những hộp thoại này có thể được sử dụng để thông báo, các nhận input, hoặc nhận input từ người dùng.
+Dưới đây chúng ta bàn luận từng kiểu hộp thoại một.
+
+- Hộp thoại thông báo (Alert)
+Một hộp thoại thông báo (Alert Dialog Box) được phỗ biến nhất để cảnh báo tới người dùng. Ví dụ, nếu một trường input yêu cầu nhập một vài văn bản nhưng người dùng không cung cấp bất kỳ đầu vào nào, thì khi đó như là một phần của xác nhận, bạn có thể sử dụng hộp thoại thông báo để đưa một cảnh báo.
+Tuy nhiên, một hộp thông báo vẫn có thể được sử dụng cho các thông báo thân thiện hơn. Hộp thao báo chỉ cung cấp một nút OK để chọn và tiếp tục.
+
++ Ví dụ:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function Warn() {
+                alert("Xin chao!");
+                document.write("Chao nhe");
+            }
+        </script>
+    </head>
+    <body>
+        <p>Xin chao nhe</p>
+        <form>
+            <input type="button" value="Hello" onclick="Warn()" />
+        </form>
+    </body>
+</html>
+
+- Hộp thoại gợi ý (Prompt)
+Hội thoại gợi ý (Prompt Dialog Box) là rất hữu ích khi bạn muốn pop-up một hộp văn bản để nhận input từ người dùng.
+Vì thế, nó cho bạn khả năng tương tác với người dùng. Người dùng cần điền thông tin vào trường đó, sau đó nhấn OK.
+
+Hộp thoại này được hiển thị bởi sử dụng một phương thức là prompt() mà nhận hai tham số: (i) Một label mà bạn muốn hiển thị trong hộp văn bản
+và (ii) Một chuỗi mặc định để hiển thị trong hộp văn bản.
+
+Hộp thoại này có 2 nút: OK và Cancel. Nếu người dùng nhấn OK, phương thức prompt() sẽ trả về giá trị đã nhập từ hộp văn bản. Nếu người dùng nhấn Cancel, phương prompt() trả về null.
+
++ Ví dụ:
+Sử dụng hộp thoại gợi ý Prompt trong JavaScript
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function getValue() {
+                var retVal = prompt("Enter your name: ", "your name here");
+                document.write("You have entered: " + retVal);
+            }
+        </script>
+    </head>
+    <body>
+        <p>Xin chao nhe</p>
+        <form>
+            <input type="button" value="Hello" onclick="getValue()" />
+        </form>
+    </body>
+</html>
+
+- Hộp thoại xác nhận Confirmation
+Một hộp thoại xác nhận (Confirmation Dialog) được sử dụng phổ biến nhất để nhận sự đồng ý của người dùng trên bất kỳ tùy chọn nào.
+Nó hiển thị một hộp thoại với hai nút: OK và Cancel.
+Nếu người dùng click vào nút OK, phương thức confirm() sẽ trả về true. Nếu người dùng click nút Cancel, thì confirm() trả về false.
+Bạn có thể sử dụng một hộp thoại xác nhận như sau:
+
++ Ví dụ:
+Sử dụng hộp thoại xác nhận Confirmation trong JavaScript
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function getConfirmation() {
+                var retVal = confirm("Do you want to continue?");
+                if (retVal == true) {
+                    document.write("User wants to continue!");
+                    return true;
+                } else {
+                    document.write("User does not want to continue!");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p>Click the following button to see the result: </p>
+        <form>
+            <input type="button" value="Click Me" onclick="getConfirmation();" />
+        </form>
+   </body>
+</html>

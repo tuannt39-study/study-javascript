@@ -1,0 +1,398 @@
+
+- Toán tử trong JavaScript
+
+- Một toán tử là gì?
+Chúng ta xem biểu thức đơn giản sau: 4 + 5 bằng 9.
+Tại đây 4 và 5 là các operands - toán hạng và '+' được gọi là operator - toán tử.
+JavaScript hỗ trợ các kiểu toán tử sau:
+Toán tử số học
+Toán tử so sánh
+Toán tử logic (hoặc quan hệ)
+Toán tử gán
+Toán tử điều kiện
+
+- Toán tử số học:
+JavaScript hỗ trợ các kiểu toán tử số học sau: Gỉa sử biến A=10, B=20 thì khi đó:
++ Phép cộng: Cộng hai toán hạng.
+A + B sẽ cho kết quả là 10 + 20 = 30
++ Phép trừ: Trừ toán hạng thứ hai từ toán hạng đầu.
+A - B sẽ cho kết quả là 10 - 20 = -10
++ Phép nhân: Nhân hai toán hạng.
+A * B sẽ cho kết quả là 10 * 20 = 200
++ Phép chia: Chia số chia cho số bị chia.
+B / A sẽ cho kết quả 20 / 10 = 2
++ Phép chia lấy phần dư: Kết quả là phần dư của phép chia.
+B % A sẽ cho kết quả 20 % 10 = 0
++ Phép tăng lên 1: Tăng giá trị integer lên 1.
+A++ sẽ cho kết quả là 10 + 1 = 11
++ Phép giảm đi 1: Giảm một giá trị integer đi 1.
+A-- sẽ cho kết quả là 10 - 1 = 9
+
+Ghi chú: Toán hạng cộng (+) làm việc với các số cũng như các chuỗi.
+Ví dụ: "a" + 10 sẽ cho kết quả là "a10".
+
++ Sử dụng các toán tử số học trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var a = 33; b = 10; c = "test"; linebreak = "<br />";
+
+            document.write("a = " + a + " | b = " + b + " | c = " + c);
+            document.write(linebreak);
+
+            document.write("Phép cộng");
+            document.write(linebreak);
+            document.write("a + b = ");
+            result = a + b;
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("Phép trừ");
+            document.write(linebreak);
+            document.write("a - b = ");
+            result = a - b;
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("Phép chia");
+            document.write(linebreak);
+            document.write("a / b = ");
+            result = a / b;
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("Phép chia dư");
+            document.write(linebreak);
+            document.write("a % b = ");
+            result = a % b;
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("Phép tăng lên 1");
+            document.write(linebreak);
+            document.write("a = " + a);
+            document.write(linebreak);
+            document.write("a++ = ");
+            result = a++;
+            document.write(result);
+            document.write(linebreak);
+            document.write("a = " + a);
+            document.write(linebreak);
+
+            document.write("Phép giảm đi 1");
+            document.write(linebreak);
+            document.write("b = " + b);
+            document.write(linebreak);
+            document.write("b-- = ");
+            result = b--;
+            document.write(result);
+            document.write(linebreak);
+            document.write("b = " + b);
+            document.write(linebreak);
+
+            document.write("Phép cộng");
+            document.write(linebreak);
+            document.write("a = " + a);
+            document.write(linebreak);
+            document.write("a + c = ");
+            result = a + c;
+            document.write(result);
+        </script>
+    </body>
+</html>
+
+- Toán tử so sánh:
+JavaScript hỗ trợ các toán tử so sánh sau: Giả sử A=10, B=20:
++ Phép bằng: Kiểm tra giá trị của 2 toán hạng là cân bằng hay không nếu có trả về true, sai trả về false.
+A == B sẽ cho kết quả là false
++ Phép không cân bằng: Kiểm tra giá trị của hai toán hạng không cân bằng hay không nếu dúng thì trả về true, sai thì trả về false.
+A != B sẽ cho kết quả là true
++ Phép lớn hơn: Kiểm tra giá trị toán hạng trái có lên hơn toán hạng phải hay không, nếu có thì trả về true, còn không thì trả về false.
+A > B sẽ trả về false
++ Phép nhỏ hơn: Kiểm tra giá trị toán hạng trái có nhỏ hơn toán hạng phải hay không, nếu có thì trả về false, còn không thì trả về true.
+A < B sẽ trả về true
++ Phép lớn hơn hoặc bằng: Kiểm tra giá trị toán hạng trái có lơn hơn hoặc bằng toán hạng phải hay không, nếu có thì trả về true, còn không thì trả về false.
+A >= B sẽ trả về false
++ Phép nhỏ hơn hoặc bằng: Kiểm tra giá trị toán hạng phải có nhỏ hơn hoặc bằng toán hạng phải hay không nếu có thì trả về true, còn không thì trả về false.
+A <= B sẽ trả về true
+
++ Sử dụng các toán tử so sánh trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var a = 10; b = 20; linebreak = "<br />";
+
+            document.write("a = " + a + " | b = " + b);
+            document.write(linebreak);
+
+            document.write("(a == b) -> ");
+            result = (a==b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("(a != b) -> ");
+            result = (a!=b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("(a > b)-> ");
+            result = (a>b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("(a < b)-> ");
+            result = (a<b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("(a >= b) -> ");
+            result = (a>=b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("(a <= b) -> ");
+            result = (a<=b);
+            document.write(result);
+            document.write(linebreak);
+        </script>
+    </body>
+</html>
+            
+- Toán tử logic:
+JavaScript hỗ trợ các toán tử logic sau: Giả sử A = 10; B = 20:
++ Phép AND logic: Nếu cả hai toán hạng là true thì điểu kiện trở thành true.
+A && B sẽ trả về true
++ Phép OR logic: Nếu một trong hai toán hạng là true thì điểu kiện trở thành true.
+A || B sẽ trả về true
++ Phép NOT logic: Đảo ngược trạng thái của toán tử. Nếu một điều kiện là true thì toán tử này sẽ đổi thành false.
+!(A && B) sẽ trả về false
+
++Sử dụng các toán tử logic trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var a = true; b = false; linebreak = "<br />";
+
+            document.write("a = " + a + " | b = " + b);
+            document.write(linebreak);
+
+            document.write("(a && b) -> ");
+            result = (a && b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("(a || b) -> ");
+            result = (a || b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("!(a && b) -> ");
+            result = !(a && b);
+            document.write(result);
+            document.write(linebreak);
+        </script>
+    </body>
+</html>
+
+- Toán tử thao tác bit:
+JavaScript hỗ trợ các toán tử thao tác bit sau: Giả sử A=2 (0010), B=3 (0011):
++ Phép AND bit: Thực hiện phép AND logic.
+A & B sẽ trả về 2 (0010)
++ Phép OR bit: Thực hiện phép OR logic.
+A | B sẽ trả về 3 (0011)
++ Phép XOR bit: Kết quả trả về true khi cả 2 toán hạng cùng true hoặc cùng false, còn lại trả về false.
+A ^ B sẽ trả về 1 (0001)
++ Phép phủ định bit: Thực hiện đảo ngược tất cả các bit trong toán hạng đó.
+~B sẽ trả về -4 (1100)
++ Phép dịch trái: Di chuyển tất cả các bit của toán hạng đầu tiên sang trái với số vị trí được xác định trong toán hạng thứ 2.
+A << 1 sẽ trả về 4 (0100)
++ Phép dịch phải: Di chuyển tất cả các bit của toán hạng đầu tiên sang phải với số vị trí được xác định trong toán hạng thứ 2.
+A >> 1 sẽ trả về 1 (0001)
++ Phép dịch phải với Zero: Di chuyển các bit 0 của toán hạng đầu tiên sang trái với số vị trí được xác định trong toán hạng thứ 2.
+A >>> 1 sẽ trả về 1 (0001)
+
++ Sử dụng các toán tử thao tác bit trong javascript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var a = 2; b = 3; linebreak = "<br />";
+
+            document.write("a = " + a + " | b = " + b);
+            document.write(linebreak);
+
+            document.write("(a & b) -> ");
+            result = (a & b);
+            document.write(result);
+            document.write(linebreak);
+         
+            document.write("(a | b) -> ");
+            result = (a | b);
+            document.write(result);
+            document.write(linebreak);
+         
+            document.write("(a ^ b) -> ");
+            result = (a ^ b);
+            document.write(result);
+            document.write(linebreak);
+        
+            document.write("b = " + b);
+            document.write(linebreak);
+            document.write("(~b) -> ");
+            result = (~b);
+            document.write(result);
+            document.write(linebreak);
+         
+            document.write("a = " + a);
+            document.write(linebreak);
+            document.write("(a << 1) -> ");
+            result = (a << 1);
+            document.write(result);
+            document.write(linebreak);
+            
+            document.write("a = " + a);
+            document.write(linebreak);
+            document.write("(a >> 1) -> ");
+            result = (a >> 1);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("a = " + a);
+            document.write(linebreak);
+            document.write("(a >>> 1) -> ");
+            result = (a >> 1);
+            document.write(result);
+            document.write(linebreak);
+        </script>
+    </body>
+</html>
+
+- Toán tử gán:
+JavaScript hỗ trợ các toán tử gán sau:
++ Phép gán đơn giản: Gán các giá trị toán hạng bên phải cho toán hạng bên trái.
+C = A + B
++ Phép cộng và gán: Nó cộng giá trị toán hạng bên phải với toán hạng trái và gán kết qua cho toán hạng trái.
+C += A -> C = C + A
++ Phép trừ và gán: Nó trừ toán hạng phải từ toán hạng trái và gán kết quả cho toán hạng trái.
+C -= A -> C = C - A
++ Phép nhân và gán: Nó nhân toán hạng phải với toán hạng trái và gán kết quả cho toán hạng trái.
+C *= A -> C = C * A
++ Phép chia và gán: Nó chia toán hạng trái cho toán hạng phải và gán kết quá cho toán hạng trái.
+C /= A -> C = C / A
++ Phép lấy phần dư và gán: Chia lấy phần dư toán hạng trái cho toán hạng phải và gán kết quả là phần dư cho toán hạng trái.
+C %= A -> C = C % A
+
++ Sử dụng các toán tử gán trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var a = 33; b = 10; linebreak = "<br />";
+
+            document.write("a = " + a + " | b = " + b);
+            document.write(linebreak);
+
+            document.write("(a = b) -> ");
+            result = (a = b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("(a += b) -> ");
+            result = (a += b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("(a -= b) -> ");
+            result = (a -= b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("(a *= b) -> ");
+            result = (a *= b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("a = " + a);
+            document.write(linebreak);
+            document.write("b = " + b);
+            document.write(linebreak);
+            document.write("(a /= b) -> ");
+            result = (a /= b);
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("a = " + a);
+            document.write(linebreak);
+            document.write("b = " + b);
+            document.write(linebreak);
+            document.write("(a %= b) -> ");
+            result = (a %= b);
+            document.write(result);
+            document.write(linebreak);
+        </script>
+    </body>
+</html>
+
+- Toán tử hỗn hợp:
++ Toán tử điều kiện: Đầu tiên tính toán một biểu thức để xem nó là true hoặc false và sau đó thực thi một trong hai lệnh đã cung cấp phụ thuộc vào kết quả của sự tính toán.
+Nếu điều kiện là true ? thì giá trị là X : nếu khống giá trị là Y
+
++ Sử dụng toán tử điều kiện trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var a = 10; b = 20; linebreak = "<br />";
+
+            document.write("a = " + a + " | b = " + b);
+            document.write(linebreak);
+
+            document.write("(a > b ) ? 100 : 200 -> ");
+            result = (a > b) ? 100 : 200;
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("(a < b ) ? 100 : 200 -> ");
+            result = (a < b) ? 100 : 200;
+            document.write(result);
+            document.write(linebreak);
+        </script>
+    </body>
+</html>
+
++ Toán tử typeof: Là toán tử một ngôi mà được đặt trước toán hạng đơn của nó, mà có thể là bất cứ kiểu nào. Giá trị của nó à một chuỗi chỉ dẫn dữ liệu của toán hạng.
+Toán tử typeof ướng lượng "number", "string", hoặc "boolean" nếu toán hạng của nó là giá trị số, chuỗi, hoặc logic sẽ trả về kết quả là true, hoặc false trên sự ước lượng.
+Kiểu    ->  Chuỗi trả về vởi toán tử typeof
+Number  ->  "number"
+String  ->  "string"
+Boolean ->  "boolean"
+Object  ->  "object"
+Function    ->  "function"
+Undefined   -> "undefined"
+Null    ->  "object"
+
++ Sử dụng toán tử typeof trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script type="text/javascript">
+            var a = 10; b = "String"; linebreak = "<br />";
+
+            document.write("a = " + a + " | b = " + b);
+            document.write(linebreak);
+
+            document.write("typeof b == 'string' ? 'b is String' : 'b is Numeric -> ");
+            result = (typeof b == "string" ? "b is String" : "b is Numeric");
+            document.write(result);
+            document.write(linebreak);
+
+            document.write("typeof a == 'string' ? 'a is String' : 'a is Numeric -> ");
+            result = (typeof a == "string" ? "a is String" : "a is Numeric");
+            document.write(result);
+            document.write(linebreak);
+        </script>
+    </body>
+</html>

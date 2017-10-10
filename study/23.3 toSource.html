@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function book(title, publisher, price) {
+                this.title = title;
+                this.publisher = publisher;
+                this.price = price;
+            }
+            var newBook = new book("Java", "Nguyen Tuan", 1000);
+            document.write("newBook.toSource is: " + newBook.toSource());
+            document.write("Book title is : " + newBook.title + "<br />");
+            document.write("Book author is : " + newBook.publisher + "<br />");
+            document.write("Book price is : " + newBook.price + "<br />");
+        </script>
+    </body>
+</html>

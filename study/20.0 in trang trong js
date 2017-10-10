@@ -1,0 +1,26 @@
+
+- In trang trong JavaScript
+
+- Nhiều khi bạn sẽ thích đặt một nút trên trang web của bạn để in nội dung trang đó thông qua một máy in.
+JavaScript giúp bạn thực hiện chứng năng này bởi sử dụng hàm print của đối tượng window.
+
+Hàm window.print() trong JavaScript in trang hiện tại khi được thực thi. Bạn có thể gọi hàm này trực tiếp bởi sử dụng onclick như trong ví dụ sau:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p>Xin chao cac ban</p>
+        <form>
+            <input type="button" value="Print" onclick="window.print()" />
+        </form>
+    </body>
+</html>
+
+- Mặc dù nó phục vụ mục đích để in, nó không là cách được đề nghị sử dụng. Một trang máy in thân thiện thực sự là một trang với văn bản, không có hình ảnh, đồ họa hoặc quảng cáo.
+Bạn có thể tạo một máy in trang thân thiện theo các cách sau:
++ Tạo một bản sao của trang và loại bỏ các văn bản, đồ họa thừa, sau đó kết nối tới máy in trang thân thiện đó. Ví dụ: http://www.tutorialspoint.com/javascript/printfriendly.htm
++ Nếu bnaj không muốn giữ một bản sao phụ của trang, thì bạn có thể đánh dấu văn bản có thể in bởi sử dụng các comment thích hợp như <!-- PRINT STARTS HERE -->..... <!-- PRINT ENDS HERE --> 
+và sau đó bạn có thể sử dụng PERL hoặc bất kỳ script nào khác trong background để thanh lọc văn bản có thể in và hiển thị cho công việc in cuối cùng. Ví dụ: http://www.tutorialspoint.com/cgi-bin/printversion.cgi?tutorial=javascript&file=in_trang_trong_javascript.jsp

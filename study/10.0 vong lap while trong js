@@ -1,0 +1,65 @@
+
+- Vòng lặp while trong JavaScript
+
+- Trong khi viết một chương trình, bạn có thể gặp một tình hướng mà bạn cần thực hiện một hành động lặp đi lặp lại. Trong những tình huống này bạn sẽ cần biết các lệnh vòng lặp để giảm số dòng code.
+JavaScript hỗ trợ tất cả vòng lặp cần thiết để giảm áp lực của chương trình.
+
+- Vòng lặp While:
+Vòng lặp cơ bản nhất trong JavaScript là vòng lặp while sẽ được bạn luận trong chương này.
+Mục đích của vòng lặp while là để thực thi một lệnh khoặc khối code lặp đi lặp lại miễn là expression - biểu thức là true. Một khi biết thức trở thành false thì vòng lặp sẽ kết thúc.
+
++ Cú pháp:
+while (expression) {
+    Statement(s) to be executed if expression is true
+}
+
++ Sử dụng vòng lặp while trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var count = 0; linebreak = "<br />";
+
+            document.write("count = " + count);
+            document.write(linebreak);
+
+            document.write("Starting Loop");
+            document.write(linebreak);
+            while (count < 10) {
+                document.write("Current Count: " + count + "<br />");
+                count++;
+            }
+            document.write("Loop stopped!");
+        </script>
+    </body>
+</html>
+
+- Vong lặp do .. while:
+Vòng lặp do while là tương tự như vòng lặp while ngoại trừ việc kiểm tra điều kiện xảy ra ở cuối vòng lặp. Điều này có nghĩa là vòng lặp sẽ luôn luôn được thực thi ít nhất một lần, ngay cả khi điều kiện false.
++ Cú pháp:
+do {
+   Statement(s) to be executed;
+} while (expression);
+
+Ghi chú: Bạn đừng quên dấu chấm phẩy được sử dụng tại cuối vòng lặp do while.
+
++ Sử dụng vòng lặp do while trong JavaScript:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var count = 0; linebreak = "<br />";
+
+            document.write("count = " + count);
+            document.write(linebreak);
+
+            document.write("Starting Loop");
+            document.write(linebreak);
+            do {
+                document.write("Current Count: " + count + "<br />");
+                count++;
+            } while (count < 10);
+            document.write("Loop stopped!");
+        </script>
+    </body>
+</html>

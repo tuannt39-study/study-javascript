@@ -1,0 +1,20 @@
+
+- Kích hoạt JavaScript trong các trình duyệt
+
+- Tất cả các trình duyệt hiện đại đi kèm với hỗ trợ có sẵn cho JavaScript.
+Thường thì bạn có thể cần thao tác để enable(kích hoạt) hoặc disable (vô hiệu hóa) hỗ trợ này.
+
+- Cảnh báo về các trình duyệt Non-JavaScript:
+Nếu bạn phải thực hiện cái gì đó quan trọng sử dụng JavaScript thì khi đó bạn có thể hiển thị một thông báo cảnh báo tới người dùng bởi sử dụng các thẻ <noscript>.
+Bạn có thể thêm một khối noscript trực tiếp sau khối script như sau:
+<html>
+    <body>
+        <script language="javascript" type="text/javascript">
+            document.write("Hello");
+        </script>
+
+        <noscript>
+            Xin lỗi...Bạn cần phải kích hoạt JavaScript trên trình duyệt.
+        </noscript>
+    </body>
+</html>

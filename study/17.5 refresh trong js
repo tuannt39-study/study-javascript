@@ -1,0 +1,26 @@
+
+- Refresh trang trong JavaScript 
+
+- Bạn có thể refresh một trang web bởi sử dụng phương thức localtion.reload trong JavaScript.
+Code này có thể được gọi tự động trên một sự kiện hoặc đơn giản khi người dùng click trên một link.
+Nếu bạn muốn refresh một trang web bởi một cú nhấp chuột, bạn có thể sử dụng code sau:
+<a href="javascript:localtion.reload(true)">Refresh Page</a>
+
+- Refresh trang tự động:
+Bạn cũng có thể sử dụng JavaScript để refresh trang một cách tự động sau một khoảng thời gian đã cho. Ở đây setTimeout() là một hàm có sẵn trong JavaScript mà có thể được sử dụng để thực thi hàm khác sau một quãng thời gian đã cho.
+
++ Ví dụ:
+Cách refresh một trang sau mỗi 5 giây. Bạn có thể thay đổi thời gian này tùy theo bạn.
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function AutoRefresh(t) {
+                setTimeout("location.reload(true)", t);
+            }
+        </script>
+    </head>
+    <body onload="javascript:AutoRefresh(5000)">
+        <p>This page will refresh every 5 seconds.</p>
+    </body>
+</html>

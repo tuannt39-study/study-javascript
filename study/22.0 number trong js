@@ -1,0 +1,431 @@
+
+- Đối tượng Number trong JavaScript
+
+- Đối tượng Number biểu diễn ngày ở dạng giá trị số, haowcj integer hoặc floating-poin.
+Nói chung, bạn không cần lo lăng về các đối tượng Number bởi vì trình duyệt tự động biến đổi các number literal để mình họa các lớp số.
+
++ Cú pháp:
+Tạo đối tương Number như sau:
+var val = new Number(number);
+Trong vị trí của number, nếu bạn cung cấp bất kỳ giá trị không phải số, thì khi đó tham số không thể được biến đổi thành một số, nó trả về NaN (viết tắt của Not-a-Number).
+
+- Các thuộc tính của number:
+
++ MAX_VALUE: Giá trị lớn nhất có thể của một số trong JavaScript có thể tới 1.7976931348623157E+308
+
++ MIN_VALUE: Giá trị nhỏ nhất có thể của một số trong JavaScript có thể tới 5E-324
+
++ NaN: Tương đương với giá trị mà không phải là một số
+
++ NEGATIVE_INFINITY: Một giá trị nhỏ hơn MIN_VALUE
+
++ POSITIVE_INFINITY: Một giá trị lớn hơn MAX_VALUE
+
++ prototype: Thuộc tính tĩnh của đối tượng Number. Sử dụng thuộc tính prototype để gán các thuộc tính và phương thức mới tới đối tượng Number trong tài liệu hiện tại
+
++ constructor: Trả về hàm mà tạo sự minh họa của đối tượng này. Theo mặc định, nó là đối tượng Number.
+
++ Thuộc tính MAX_VALUE:
+Thuộc tính MAX_VALUE thuộc đối tượng Number tĩnh.
+Nó biểu diễn các hằng số cho các số khẳng định lớn nhất mà JavaScript có thể làm việc với.
+Giá trị thực của hằng số này là 1.7976931348623157 x 10^308.
+
+Cú pháp:
+var val = Number.MAX_VALUE;
+
+Ví dụ:
+Sử dụng MAX_VALUE của đối tượng Number:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function showValue(){
+                var val = Number.MAX_VALUE;
+                document.write("Value of Number.MAX_VALUE: " + val);
+            }
+        </script>
+    </head>
+    <body>
+        <p>Xin chao</p>
+        <form>
+            <input type="button" value="Value" onclick="showValue" />
+        </form>
+    </body>
+</html>
+
++ Thuộc tính MIN_VALUE:
+Thuộc tính Number.MIN_VALUE thuộc đối tượng Number tĩnh.
+Nó biểu diễn các hằng số cho các số khẳng định nhỏ nhất có thể mà JavaScript có thể làm việc với.
+Hằng số này có giá trị thực là 5 x 10^-324
+
+Cú pháp:
+var val = Number.MIN_VALUE;
+
+Ví dụ:
+Sử dụng MIN_VALUE của đối tượng Number:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function showValue(){
+                var val = Number.MIN_VALUE;
+                document.write("Value of Number.MIN_VALUE: " + val);
+            }
+        </script>
+    </head>
+    <body>
+        <p>Click the following to see the result:</p>
+        <form>
+            <input type="button" value="Value" onclick="showValue()" />
+        </form>
+    </body>
+</html>
+
++ Thuộc tính NaN:
+Hằng số NaN không được trích dẫn là một giá trị đặc biệt biểu diễn Not-a-Number. NaN luôn luôn so sánh không bằng với bất kỳ số nào, bao gồm cả NaN, nó thường được sử dụng để chỉ dẫn một điều kiện lỗi cho một hàm mà nên trả về một số hợp lệ.
+Ghi chú − Sử dụng hàm isNaN() global để xem nếu một giá trị là một giá trị NaN.
+
+Cú pháp:
+var val = Number.NaN;
+
+Ví dụ:
+Sử dụng NaN của đối tượng Number:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function showValue(){
+                var dayOfMonth = 50;
+                if (dayOfMonth < 1 || dayOfMonth > 31) {
+                    dayOfMonth = Number.NaN;
+                    alert("Day of Month must be between 1 and 31.");
+                }
+                document.write("Value of dayOfMonth : " + dayOfMonth );
+            }
+        </script>
+    </head>
+    <body>
+        <p>Click the following to see the result:</p>
+        <form>
+            <input type="button" value="Value" onclick="showValue()" />
+        </form>
+    </body>
+</html>
+
++ Thuộc tính NEGATIVE_INFINITY:
+Đây là một giá trị số đặc biệt biểu diễn một giá trị nhỏ hơn Number.MIN_VALUE. Giá trị này được biểu diễn dưới dạng "-Infinity". Nó giống với một số vô cực trong toán học. Ví dụ, bất cứ gì nhân với NEGATIVE_INFINITY là NEGATIVE_INFINITY, và bất cứ gì chia cho NEGATIVE_INFINITY là 0.
+Bởi vì NEGATIVE_INFINITY là một hằng số, nó là một thuộc tính chỉ đọc (read-only) của Number.
+
+Cú pháp:
+var val = Number.NEGATIVE_INFINITY;
+
+Ví dụ:
+Sử dụng NEGATIVE_INFINITY của đối tượng Number:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function showValue(){
+                var smallNumber = (-Number.MAX_VALUE) * 2
+                if (smallNumber == Number.NEGATIVE_INFINITY) {
+                    alert("Value of smallNumber : " + smallNumber );
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p>Click the following to see the result:</p>
+        <form>
+            <input type="button" value="Value" onclick="showValue()" />
+        </form>
+    </body>
+</html>
+
++ Thuộc tính POSITIVE_INFINITY:
+Đây là một giá trị số đặc biệt biểu diễn bất kỳ giá trị nào lớn hơn Number.MAX_VALUE. Giá trị này được biểu diễn ở dạng "Infinity". Nó giống một số vô cực trong toán học. Ví dụ, bất kỳ thứ gì nhân với POSITIVE_INFINITY là POSITIVE_INFINITY, và bất kỳ thứ gì chia cho POSITIVE_INFINITY là 0.
+Bởi vì POSITIVE_INFINITY là một hằng số, nó là một thuộc tính read-only của Number.
+
+Cú pháp:
+var val = Number.POSITIVE_INFINITY;
+
+Ví dụ:
+Sử dụng POSITIVE_INFINITY của đối tượng Number:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function showValue(){
+                var bigNumber = Number.MAX_VALUE * 2
+                if (bigNumber == Number.POSITIVE_INFINITY) {
+                    alert("Value of bigNumber : " + bigNumber );
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p>Click the following to see the result:</p>
+        <form>
+            <input type="button" value="Value" onclick="showValue()" />
+        </form>
+    </body>
+</html>
+
++ Thuộc tính prototype:
+Thuộc tính prototype cho phép bạn thêm các thuộc tính và phương thức tới bất kỳ đối tượng nào (Number, Boolean, String và Date …).
+Ghi chú − Prototype là một thuộc tính Global mà có sẵn với hầu hết tất cả đối tượng.
+
+Cú pháp:
+object.prototype.name = value
+
+Ví dụ:
+Sử dụng prototype của đối tượng Number:
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            function book(title, author) {
+                this.title = title;
+                this.author = author;
+            }
+        </script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var myBook = new book("Java", "Nguyen Tuan");
+            book.prototype.price = null;
+            myBook.price = 1000;
+            document.write("Book title is : " + myBook.title + "<br />");
+            document.write("Book author is : " + myBook.author + "<br />");
+            document.write("Book price is : " + myBook.price + "<br />");
+        </script>
+    </body>
+</html>
+
++ Thuộc tính constructor:
+Nó trả về một tham chiếu tới hàm Number mà tạo prototype của đối tượng đó.
+
+Cú pháp:
+number.constructor()
+
+Ví dụ:
+Sử dụng constructor của đối tượng Number:
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript constructor() Method</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var num = new Number( 177.1234 );
+            document.write("num.constructor() is : " + num.constructor); 
+        </script>
+    </body>
+</html>
+
+- Các phương thức của Number
+
++ toExponential(): Làm một số hiển thị ở dạng số mũ, ngay cả khi số này là trong một dãy trong đó JavaScript thường sử dụng ký hiệu chuẩn.
+
++ toFixed(): Định dạng một số với một số chữ số đặc trưng tới bên phải của phần thập phân.
+
++ toLocaleString(): Trả về một phiên bản giá trị chuỗi của số hiện tại trong một định dạng mà có thể đa dạng theo thiết lập nội bộ của trình duyệt.
+
++ toPrecision(): Định nghĩa bao nhiêu chữ số (bao gồm các chữ số ở bên phải và bên trái phần thập phân) để hiển thị một số.
+
++ toString(): Trả về sự biểu diễn chuỗi của giá trị số.
+
++ valueOf(): Trả về giá trị của số.
+
++ Phương thức toExponential:
+Phương thức này trả về một chuỗi biểu diễn đối tượng Number trong dạng số mũ.
+
+Cú pháp:
+number.toExponential( [fractionDigits] )
+
+Chi tiết về tham số:
+fractionDigits − Một integer xác định số chữ số sau dấu chấm thập phân. Mặc định là số chữ số cần thiết để xác định số đó.
+
+Trả về giá trị:
+Một chuỗi biểu diễn một đối tượng Number trong dạng số mũ với một chữ số trước dấu thập phân, được làm tròn tới các chữ số fractionDigits sau dấu thập phân. Nếu tham số fractionDigits bị bỏ qua, số chữ số sau dấu thập phân mặc định là số chữ số cần thiết để biểu diễn giá trị duy nhất.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Javascript Method toExponential()</title>
+   </head>
+   <body>
+      <script type="text/javascript">
+         var num=77.1234;
+         var val = num.toExponential(); 
+         document.write("num.toExponential() is : " + val );
+         document.write("<br />"); 
+         
+         val = num.toExponential(4);
+         document.write("num.toExponential(4) is : " + val );
+         document.write("<br />"); 
+         
+         val = num.toExponential(2); 
+         document.write("num.toExponential(2) is : " + val); 
+         document.write("<br />"); 
+         
+         val = 78.1234.toExponential(); 
+         document.write("78.1234.toExponential()is : " + val ); 
+         document.write("<br />"); 
+         
+         val = 78.12345.toExponential(); 
+         document.write("78 .toExponential() is : " + val); 
+      </script>
+   </body>
+</html>
+
++ Phương thức toFixed:
+Phương thức này định dạng một number với số chữ số đặc trưng bên phải phần thập phân.
+
+Cú pháp:
+number.toFixed( [digits] )
+
+Chi tiết về tham số:
+digits − Số các chữ số xuất hiện sau dấu thập phân.
+
+Trả về giá trị:
+Một biểu diễn chuỗi của số mà không sử dụng dạng số mũ và có chính xác số chữ số sau dấu thập phân.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>JavaScript toFixed() Method</title>
+   </head>
+   <body>
+      <script type="text/javascript">
+         var num=177.1234;
+         document.write("num.toFixed() is : " + num.toFixed()); 
+         document.write("<br />"); 
+      
+         document.write("num.toFixed(6) is : " + num.toFixed(6)); 
+         document.write("<br />"); 
+      
+         document.write("num.toFixed(1) is : " + num.toFixed(1)); 
+         document.write("<br />"); 
+      
+         document.write("(1.23e+20).toFixed(2) is:" + (1.23e+20).toFixed(2)); 
+         document.write("<br />"); 
+      
+         document.write("(1.23e-10).toFixed(2) is : " + (1.23e-10).toFixed(2)); 
+      </script>
+   </body>
+</html>
+
++ Phương thức toLocaleString:
+Phương thức này biến đổi một đối tượng number thành một chuỗi biểu diễn số con người có thể đọc bởi sử dụng Locale của môi trường đó.
+Cú pháp:
+number.toLocaleString()
+
+Trả về giá trị:
+Trả về một chuỗi biểu diễn số mà con người có thể đọc bởi sử dụng Locale của môi trường.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>JavaScript toLocaleString() Method </title>
+   </head>
+   <body>
+      <script type="text/javascript">
+         var num = new Number(177.1234);
+         document.write( num.toLocaleString()); 
+      </script>
+   </body>
+</html>
+
++ Phương thức toPrecision:
+Phương thức này trả về một chuỗi biểu diễn đối tượng number với độ chính xác đã xác định.
+
+Cú pháp:
+number.toPrecision( [ precision ] )
+
+Chi tiết về tham số:
+precision − Một integer xác định số các chữ số quan trọng (có nghĩa).
+
+Trả về giá trị:
+Trả về một chuỗi biểu diễn một đối tượng Number với số chữ số có nghĩa cố định được làm tròn bởi toprecision.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>JavaScript toPrecision() Method </title>
+   </head>
+   <body>
+      <script type="text/javascript">
+         var num = new Number(7.123456);
+         document.write("num.toPrecision() is " + num.toPrecision());
+         document.write("<br />"); 
+         
+         document.write("num.toPrecision(4) is " + num.toPrecision(4)); 
+         document.write("<br />"); 
+         
+         document.write("num.toPrecision(2) is " + num.toPrecision(2)); 
+         document.write("<br />"); 
+         
+         document.write("num.toPrecision(1) is " + num.toPrecision(1)); 
+      </script>
+   </body>
+</html>
+
++ Phương thức toString:
+Phương thức này trả về một chuỗi biểu diễn đối tượng đã xác định. Phương thức toString() phân tích tham số đầu tiên của nó, và cố gắng trả về một biểu diễn chuỗi trong cơ số (radix) đã xác định.
+
+Cú pháp:
+number.toString( [radix] )
+
+Chi tiết về tham số:
+radix − Một integer giữa 2 và 36 xác định cơ số sử dụng để biểu diễn các giá trị số.
+
+Trả về giá trị:
+Trả về một chuỗi biểu diễn đối tượng Number đã xác định.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>JavaScript toString() Method </title>
+   </head>
+   <body>
+      <script type="text/javascript">
+         num = new Number(15);
+         document.write("num.toString() is " + num.toString());
+         document.write("<br />"); 
+         
+         document.write("num.toString(2) is " + num.toString(2)); 
+         document.write("<br />"); 
+         
+         document.write("num.toString(4) is " + num.toString(4)); 
+         document.write("<br />"); 
+      </script>
+   </body>
+</html>
+
++ Phương thức valueOf:
+Phương thức này trả về giá trị gốc của đối tượng Number đã xác định.
+
+Cú pháp:
+number.valueOf()
+
+Trả về giá trị:
+Trả về giá trị gốc của đối tượng Number đã xác định.
+
+Ví dụ:
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>JavaScript valueOf() Method </title>
+   </head>
+   <body>
+      <script type="text/javascript">
+         var num = new Number(15.11234);
+         document.write("num.valueOf() is " + num.valueOf());
+      </script>
+   </body>
+</html>
