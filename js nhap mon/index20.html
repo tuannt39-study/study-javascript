@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Hoc JavaScript trong mot gio</title>
+    </head>
+
+    <body>
+
+        <h1>Hello JavaScript</h1>
+        <button onclick="onClickMe()">Click Me</button>
+        <p>You have clicked <span id="count">0</span> times</p>
+
+        <script>
+            var count = 0;
+            function onClickMe(){
+                console.log('Button is clicked');
+                count++;
+                // document.querySelector('#count').innerText = count;
+
+                document.getElementById('count').innerText = count;
+            }
+        </script>
+        
+    </body>
+
+</html>

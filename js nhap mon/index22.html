@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hoc JavaScript trong mot gio</title>
+        <style>
+            html, body, h1 {
+                margin: 0;
+                padding: 0;
+            }
+
+            html, body {
+                height: 100%;
+                width: 100%;
+                font-weight: 300;
+                color: #000000;
+                overflow: auto;
+            }
+
+            main {
+                height: 100%;
+                text-align: center;
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+
+            h1 {
+                font-size: 32px;
+                margin-top: 150px;
+                margin-bottom: 60px;
+                line-height: 1.85;
+            }
+
+            cite {
+                margin-top: 150px;
+            }
+
+            .btn-refresh {
+                display: block;
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                margin: 0 auto;
+                height: 50px;
+                width: 150px;
+                margin-left: -75px;
+                font-size: 18px;
+                background: none;
+                border: solid 1px #000000;
+                color: #000000;
+                border-radius: 5px;
+                transition: background-color 0.2s, border 0.2s, color 0.2s;
+            }
+
+            .btn-refresh:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+                border: #000000;
+                cursor: pointer;
+                color: #000000;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <main>
+            <h1 id="quote"></h1>
+            <cite id="author"></cite>
+            <button class="btn-refresh" onclick="makeQuote()">Refresh</button>
+        </main>
+
+        <script>
+            var quotes = [
+                { // 0
+                    quote: 'Hoc, hoc nua, hoc mai 1',
+                    author: 'Lenin'
+                },
+                { // 1
+                    quote: 'Hoc, hoc nua, hoc mai 2',
+                    author: 'Lenin'
+                },
+                {
+                    quote: 'Hoc, hoc nua, hoc mai 3',
+                    author: 'Lenin'
+                },
+                {
+                    quote: 'Hoc, hoc nua, hoc mai 4',
+                    author: 'Lenin'
+                },
+                {
+                    quote: 'Hoc, hoc nua, hoc mai 5',
+                    author: 'Lenin'
+                },
+                {
+                    quote: 'Hoc, hoc nua, hoc mai 6',
+                    author: 'Lenin'
+                },
+                {
+                    quote: 'Hoc, hoc nua, hoc mai 7',
+                    author: 'Lenin'
+                },
+                {
+                    quote: 'Hoc, hoc nua, hoc mai 8',
+                    author: 'Lenin'
+                },
+                {
+                    quote: 'Hoc, hoc nua, hoc mai 9',
+                    author: 'Lenin'
+                },
+                {
+                    quote: 'Hoc, hoc nua, hoc mai 10',
+                    author: 'Lenin'
+                }
+            ]
+
+            function makeRandomNumber(range) {
+                return Math.floor(Math.random() * range); // 0 -> range
+            }
+
+            function getQuote() {
+                return quotes[makeRandomNumber(quotes.length)];
+            }
+
+            function makeQuote() {
+                var quote = getQuote();
+
+                var eleQuote = document.getElementById('quote');
+                var eleAuthor = document.getElementById('author');
+
+                eleQuote.innerText = quote.quote;
+                eleAuthor.innerText = quote.author;
+            }
+
+            window.onload = makeQuote();
+
+        </script>
+        
+    </body>
+
+</html>

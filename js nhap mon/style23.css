@@ -1,0 +1,26 @@
+
+html, body, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-weight: 300;
+    color: #000000;
+    overflow: auto;
+}
+
+main {
+    height: 100%;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+h1, section {
+    font-size: 32px;
+    margin-left: 60px;
+    line-height: 1.85;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Hoc JavaScript trong mot gio</title>
+    </head>
+
+    <body>
+
+        <h1>Hello JavaScript</h1>
+
+        <script>
+            var name = prompt('Ten ban la gi: ');
+            console.log(name);
+            document.write('<p>Name: ' + name + '</p>');
+
+            var age = prompt('Ban bao nhieu tuoi: ');
+            console.log(age);
+            document.write('<p>Tuoi: ' + age + '</p>');
+
+            var isMale = confirm('Ban la nam?');
+            console.log(isMale);
+            document.write('<p>Nam: ' + isMale + '</p>');
+
+            var gender = isMale ? 'Male' : 'Female';
+            console.log(gender);
+            document.write('<p>Gio tinh: ' + gender + '</p>');
+        </script>
+        
+    </body>
+
+</html>
